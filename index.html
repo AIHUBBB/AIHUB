@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AIHUB - AI Tools Directory</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        🤖 AIHUB
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#tools">
+            Tools
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="#tools">
+            Trending
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+    <div class="badge">
+        ✨ THE AI TOOLS DIRECTORY
+    </div>
+
+
+    <h1>
+        Discover the Best
+        <span>AI Tools</span>
+    </h1>
+
+
+    <p>
+        Find the best AI tools for writing,
+        images, video, music, coding and business.
+    </p>
+
+
+
+    <!-- =========================
+         SEARCH + FILTERS
+    ========================= -->
+
+    <div class="search-area">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="🔎 Search AI tools..."
+        >
+
+
+        <div class="filters">
+
+            <button
+                class="filter active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="writing"
+            >
+                ✍️ Writing
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="image"
+            >
+                🎨 Image
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="video"
+            >
+                🎬 Video
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="music"
+            >
+                🎵 Music
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="coding"
+            >
+                💻 Coding
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="business"
+            >
+                💼 Business
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="free"
+            >
+                🆓 Free
+            </button>
+
+
+            <button
+                class="filter"
+                data-filter="paid"
+            >
+                💳 Paid
+            </button>
+
+
+            <button
+                class="filter"
+                id="favoritesFilter"
+            >
+                ❤️ Favorites
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     TOOLS
+========================= -->
+
+<section id="tools">
+
+    <h2>
+        🔥 Trending AI Tools
+    </h2>
+
+
+    <p class="section-text">
+        Popular AI tools you can discover today.
+    </p>
+
+
+
+    <div class="tools-grid">
+
+
+
+        <!-- CHATGPT -->
+
+        <div
+            class="tool-card"
+            data-category="writing"
+            data-price="both"
+            data-name="ChatGPT"
+        >
+
+            <div class="tool-icon">
+                🤖
+            </div>
+
+
+            <h3>
+                ChatGPT
+            </h3>
+
+
+            <p>
+                AI assistant for writing,
+                questions and productivity.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.9
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=ChatGPT"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="ChatGPT"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CLAUDE -->
+
+        <div
+            class="tool-card"
+            data-category="writing"
+            data-price="both"
+            data-name="Claude"
+        >
+
+            <div class="tool-icon">
+                🧠
+            </div>
+
+
+            <h3>
+                Claude
+            </h3>
+
+
+            <p>
+                AI assistant for writing,
+                analysis and research.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.8
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Claude"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Claude"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CANVA AI -->
+
+        <div
+            class="tool-card"
+            data-category="image"
+            data-price="both"
+            data-name="Canva AI"
+        >
+
+            <div class="tool-icon">
+                🎨
+            </div>
+
+
+            <h3>
+                Canva AI
+            </h3>
+
+
+            <p>
+                Create designs and images
+                with artificial intelligence.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.7
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Canva%20AI"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Canva AI"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MIDJOURNEY -->
+
+        <div
+            class="tool-card"
+            data-category="image"
+            data-price="paid"
+            data-name="Midjourney"
+        >
+
+            <div class="tool-icon">
+                🖼️
+            </div>
+
+
+            <h3>
+                Midjourney
+            </h3>
+
+
+            <p>
+                Generate high-quality AI
+                images from text.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.9
+            </div>
+
+
+            <div class="price">
+                Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Midjourney"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Midjourney"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RUNWAY -->
+
+        <div
+            class="tool-card"
+            data-category="video"
+            data-price="both"
+            data-name="Runway"
+        >
+
+            <div class="tool-icon">
+                🎬
+            </div>
+
+
+            <h3>
+                Runway
+            </h3>
+
+
+            <p>
+                Create and edit videos
+                with AI.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.7
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Runway"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Runway"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HEYGEN -->
+
+        <div
+            class="tool-card"
+            data-category="video"
+            data-price="both"
+            data-name="HeyGen"
+        >
+
+            <div class="tool-icon">
+                🎥
+            </div>
+
+
+            <h3>
+                HeyGen
+            </h3>
+
+
+            <p>
+                Create AI avatar videos
+                and presentations.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.6
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=HeyGen"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="HeyGen"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUNO -->
+
+        <div
+            class="tool-card"
+            data-category="music"
+            data-price="both"
+            data-name="Suno"
+        >
+
+            <div class="tool-icon">
+                🎵
+            </div>
+
+
+            <h3>
+                Suno
+            </h3>
+
+
+            <p>
+                Generate songs and music
+                with artificial intelligence.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.8
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Suno"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Suno"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GITHUB COPILOT -->
+
+        <div
+            class="tool-card"
+            data-category="coding"
+            data-price="both"
+            data-name="GitHub Copilot"
+        >
+
+            <div class="tool-icon">
+                💻
+            </div>
+
+
+            <h3>
+                GitHub Copilot
+            </h3>
+
+
+            <p>
+                AI coding assistant
+                for developers.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.8
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=GitHub%20Copilot"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="GitHub Copilot"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NOTION AI -->
+
+        <div
+            class="tool-card"
+            data-category="business"
+            data-price="both"
+            data-name="Notion AI"
+        >
+
+            <div class="tool-icon">
+                💼
+            </div>
+
+
+            <h3>
+                Notion AI
+            </h3>
+
+
+            <p>
+                AI workspace for notes
+                and productivity.
+            </p>
+
+
+            <div class="rating">
+                ⭐ 4.7
+            </div>
+
+
+            <div class="price">
+                Free + Paid
+            </div>
+
+
+            <div class="card-buttons">
+
+                <a
+                    href="tool.html?tool=Notion%20AI"
+                    class="try-button"
+                >
+                    Try Tool →
+                </a>
+
+
+                <button
+                    class="favorite"
+                    data-tool="Notion AI"
+                >
+                    ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <p
+        id="noResults"
+        class="no-results"
+    >
+        No tools found 🔍
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section id="categories">
+
+    <h2>
+        🧩 Explore Categories
+    </h2>
+
+
+    <p class="section-text">
+        Browse AI tools by category.
+    </p>
+
+
+    <div class="category-grid">
+
+
+        <a
+            href="writing.html"
+            class="category-card"
+        >
+
+            ✍️
+
+            <h3>
+                Writing
+            </h3>
+
+            <p>
+                AI writing tools
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="image.html"
+            class="category-card"
+        >
+
+            🎨
+
+            <h3>
+                Image
+            </h3>
+
+            <p>
+                AI image generators
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="video.html"
+            class="category-card"
+        >
+
+            🎬
+
+            <h3>
+                Video
+            </h3>
+
+            <p>
+                AI video tools
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="music.html"
+            class="category-card"
+        >
+
+            🎵
+
+            <h3>
+                Music
+            </h3>
+
+            <p>
+                AI music tools
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="coding.html"
+            class="category-card"
+        >
+
+            💻
+
+            <h3>
+                Coding
+            </h3>
+
+            <p>
+                AI coding tools
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="business.html"
+            class="category-card"
+        >
+
+            💼
+
+            <h3>
+                Business
+            </h3>
+
+            <p>
+                AI business tools
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        🤖 AIHUB
+    </h2>
+
+
+    <p>
+        Discover the best AI tools in one place.
+    </p>
+
+
+    <p>
+        © 2026 AIHUB
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
