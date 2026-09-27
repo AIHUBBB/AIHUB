@@ -1,284 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>AI Business Tools - AIHUB</title>
 
-    <title>Best AI Business Tools 2026 | AIHUB</title>
+<meta name="description" content="AI business ideas, marketing and productivity tools.">
 
-    <meta
-        name="description"
-        content="Discover the best AI business tools in 2026. Explore AI tools for productivity, marketing, business management, writing and team collaboration on AIHUB."
-    >
-
-    <meta
-        name="keywords"
-        content="AI business tools, best AI business tools, AI productivity tools, AI marketing tools, Notion AI, Canva AI, HubSpot AI, Grammarly, ClickUp AI, ChatGPT"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        name="author"
-        content="AIHUB"
-    >
-
-    <link
-        rel="canonical"
-        href="https://aihubbb.github.io/AIHUB/business.html"
-    >
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<header class="navbar">
 
-<nav>
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
 
-    <div class="logo">
-        🤖 AIHUB
-    </div>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="index.html#categories">
-            Categories
-        </a>
-
-        <a href="index.html#tools">
-            Tools
-        </a>
-
-    </div>
-
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a class="active" href="business.html">Business</a>
+<a href="music.html">Music</a>
 </nav>
-
-
-<header>
-
-    <div class="badge">
-        💼 AI BUSINESS TOOLS
-    </div>
-
-    <h1>
-        Best AI Business Tools in 2026
-    </h1>
-
-    <p>
-        Discover powerful AI tools for business,
-        productivity, marketing, communication and teamwork.
-    </p>
 
 </header>
 
 
-<section>
+<main class="page">
 
-    <h2>
-        AI Business and Productivity Tools
-    </h2>
+<div class="page-header">
 
-    <p>
-        Explore popular AI business tools that can help
-        you improve productivity, manage projects, create content,
-        support customers and grow your business.
-    </p>
+<p class="small-title">BUSINESS</p>
 
+<h1>💼 AI Business</h1>
 
-    <div class="tools-grid">
+<p>
+Generate business ideas and discover ways to use AI for productivity.
+</p>
 
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🤖
-            </div>
-
-            <h3>
-                ChatGPT
-            </h3>
-
-            <p>
-                AI assistant for writing, research,
-                brainstorming, business tasks and productivity.
-            </p>
-
-            <a
-                href="tool.html?tool=ChatGPT"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
+</div>
 
 
-        <div class="tool-card">
+<div class="workspace">
 
-            <div class="tool-icon">
-                📝
-            </div>
+<h2>Business Idea Generator</h2>
 
-            <h3>
-                Notion AI
-            </h3>
+<input
+id="businessTopic"
+placeholder="Enter a niche e.g. football, gaming, fashion..."
+>
 
-            <p>
-                AI-powered workspace for writing,
-                organizing information, managing projects and teams.
-            </p>
+<button
+class="action-btn"
+onclick="generateBusinessIdea()"
+>
+Generate Idea
+</button>
 
-            <a
-                href="tool.html?tool=Notion AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+<div id="businessOutput" class="output">
+Your business idea will appear here.
+</div>
 
-        </div>
+</div>
 
 
-        <div class="tool-card">
+<div class="info-grid" style="margin-top:30px;">
 
-            <div class="tool-icon">
-                🎨
-            </div>
+<div class="info-card">
+<h3>📈 Marketing</h3>
+<p>Create content ideas and marketing concepts for your project.</p>
+</div>
 
-            <h3>
-                Canva AI
-            </h3>
+<div class="info-card">
+<h3>💡 Ideas</h3>
+<p>Explore possible online business and digital product ideas.</p>
+</div>
 
-            <p>
-                AI-powered design platform for creating
-                presentations, marketing content and visual assets.
-            </p>
+<div class="info-card">
+<h3>⚡ Productivity</h3>
+<p>Use AI concepts to simplify repetitive tasks.</p>
+</div>
 
-            <a
-                href="tool.html?tool=Canva AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+</div>
 
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                📊
-            </div>
-
-            <h3>
-                HubSpot AI
-            </h3>
-
-            <p>
-                AI tools for marketing, sales,
-                customer management and business growth.
-            </p>
-
-            <a
-                href="tool.html?tool=HubSpot AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                ✍️
-            </div>
-
-            <h3>
-                Grammarly
-            </h3>
-
-            <p>
-                AI writing assistant that helps improve
-                grammar, clarity, tone and professional communication.
-            </p>
-
-            <a
-                href="tool.html?tool=Grammarly"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                ✅
-            </div>
-
-            <h3>
-                ClickUp AI
-            </h3>
-
-            <p>
-                AI productivity tools for project management,
-                task organization, writing and team collaboration.
-            </p>
-
-            <a
-                href="tool.html?tool=ClickUp AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
+</main>
 
 
 <footer>
 
-    <h2>
-        🤖 AIHUB
-    </h2>
+<div class="footer-main">
 
-    <p>
-        Discover the best AI tools in one place.
-    </p>
+<div>
+<a href="index.html" class="logo"><span>AI</span>HUB</a>
+<p>Useful AI tools in one place.</p>
+</div>
 
-    <p>
-        © 2026 AIHUB
-    </p>
+<div class="footer-links">
+
+<div>
+<h4>Tools</h4>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 AIHUB
+</div>
 
 </footer>
 
+<script src="script.js"></script>
 
 </body>
-
 </html>
