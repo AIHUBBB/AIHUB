@@ -1,284 +1,886 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>AI Writing Tools - AIHUB</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta name="description" content="Discover AI writing tools on AIHUB for creating, rewriting and improving text, articles, ideas and content.">
+  <meta name="keywords" content="AI writing tools, AI writer, text generator, AI content writer, text rewriter, free AI writing">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aihubbb.github.io/AIHUB/writing.html">
 
-    <title>Best AI Writing Tools 2026 | AIHUB</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <meta
-        name="description"
-        content="Discover the best AI writing tools for writing, rewriting, grammar, research, content creation and productivity. Compare popular AI writing tools on AIHUB."
-    >
+  <meta property="og:title" content="AI Writing Tools - AIHUB">
+  <meta property="og:description" content="Explore useful AI writing tools for creating and improving content.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aihubbb.github.io/AIHUB/writing.html">
 
-    <meta
-        name="keywords"
-        content="AI writing tools, best AI writing tools, AI writers, AI content tools, ChatGPT, Claude, Grammarly, QuillBot, Perplexity, Jasper"
-    >
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <meta
-        name="author"
-        content="AIHUB"
-    >
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070b14;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    <link
-        rel="canonical"
-        href="https://aihubbb.github.io/AIHUB/writing.html"
-    >
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #6c63ff;
+      filter: blur(180px);
+      opacity: .12;
+      top: -200px;
+      left: -150px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #00d4ff;
+      filter: blur(180px);
+      opacity: .08;
+      bottom: -200px;
+      right: -150px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
+    /* NAVBAR */
+
+    nav {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7,11,20,.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #7c6cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b8c0d4;
+      text-decoration: none;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: linear-gradient(135deg,#7467ff,#4d8dff);
+      color: white !important;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 950px;
+      margin: auto;
+      padding: 90px 25px 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: rgba(124,108,255,.12);
+      border: 1px solid rgba(124,108,255,.25);
+      color: #aaa2ff;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px,7vw,70px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg,#8f83ff,#4fdcff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 25px auto;
+      color: #9ca6bc;
+      font-size: 18px;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      max-width: 650px;
+      margin: 30px auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 18px 22px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #7467ff;
+      box-shadow: 0 0 25px rgba(116,103,255,.18);
+    }
+
+    .search-box input::placeholder {
+      color: #778198;
+    }
+
+    /* MAIN */
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 40px 25px 90px;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-header small {
+      color: #8175ff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    .section-header p {
+      color: #818ba1;
+      margin-top: 8px;
+    }
+
+    /* TOOLS */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      position: relative;
+      padding: 27px;
+      min-height: 250px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+      );
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .3s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,108,255,.5);
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(124,108,255,.12);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .tool-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      color: #8993a9;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tool-link {
+      color: #9388ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .status {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: rgba(70,210,140,.12);
+      color: #5be09b;
+      border: 1px solid rgba(70,210,140,.2);
+    }
+
+    /* TOOL BOX */
+
+    .writer-box {
+      margin-top: 50px;
+      padding: 30px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .writer-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .writer-box p {
+      color: #8993a9;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      resize: vertical;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #0b101c;
+      color: white;
+      outline: none;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    textarea:focus {
+      border-color: #7467ff;
+    }
+
+    .writer-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      background: linear-gradient(135deg,#7467ff,#4d8dff);
+    }
+
+    button.secondary {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    #message {
+      color: #7f89a0;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 35px 25px;
+      color: #737d94;
+    }
+
+    .footer-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #737d94;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+      color: #555e72;
+    }
+
+    #noResults {
+      display: none;
+      text-align: center;
+      color: #8b95aa;
+      padding: 30px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width:850px) {
+
+      .tools-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width:600px) {
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 30px;
+      }
+
+      .nav-container {
+        padding: 15px 18px;
+      }
+
+      .writer-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- NAVBAR -->
 
-<nav>
+  <nav>
+    <div class="nav-container">
 
-    <div class="logo">
-        🤖 AIHUB
-    </div>
+      <a href="./" class="logo">
+        AI<span>HUB</span>
+      </a>
 
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="index.html#categories">
-            Categories
-        </a>
-
-        <a href="index.html#tools">
-            Tools
-        </a>
+      <ul class="nav-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="image.html">Images</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li>
+          <a href="./" class="nav-button">All Tools</a>
+        </li>
+      </ul>
 
     </div>
+  </nav>
 
-</nav>
 
+  <!-- HERO -->
 
-<header>
+  <header class="hero">
 
     <div class="badge">
-        ✍️ AI WRITING TOOLS
+      ✍️ AI Writing Tools
     </div>
 
     <h1>
-        Best AI Writing Tools in 2026
+      Create Better Content
+      <br>
+      <span class="gradient-text">With AI.</span>
     </h1>
 
     <p>
-        Discover AI tools for writing, rewriting, grammar,
-        research, content creation and productivity.
+      Discover useful AI writing tools for creating ideas,
+      improving text, rewriting content and more.
     </p>
 
-</header>
+    <div class="search-box">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="🔎 Search writing tools..."
+        aria-label="Search writing tools"
+      >
+    </div>
+
+  </header>
 
 
-<section>
+  <!-- TOOLS -->
 
-    <h2>
-        AI Writing Tools
-    </h2>
+  <main>
 
-    <p>
-        Explore popular AI writing tools that can help you
-        create content, improve your writing, fix grammar,
-        summarize information and generate ideas.
-    </p>
+    <section class="section">
+
+      <div class="section-header">
+
+        <small>Writing</small>
+
+        <h2>Writing Tools</h2>
+
+        <p>
+          Explore tools designed to make writing faster and easier.
+        </p>
+
+      </div>
 
 
-    <div class="tools-grid">
+      <div class="tools-grid" id="toolsGrid">
 
 
-        <div class="tool-card">
+        <!-- AI WRITER -->
 
-            <div class="tool-icon">
-                🤖
-            </div>
+        <article
+          class="tool-card"
+          data-name="ai writer writing text content generator"
+        >
 
-            <h3>
-                ChatGPT
-            </h3>
+          <span class="status">FREE</span>
 
-            <p>
-                AI assistant for writing, brainstorming,
-                research, coding and content creation.
-            </p>
+          <div class="tool-icon">
+            ✍️
+          </div>
 
-            <a
-                href="tool.html?tool=ChatGPT"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+          <h3>AI Writer</h3>
+
+          <p>
+            Generate ideas, paragraphs and content with the help of AI.
+          </p>
+
+          <a href="#writer" class="tool-link">
+            Try Tool →
+          </a>
+
+        </article>
+
+
+        <!-- REWRITER -->
+
+        <article
+          class="tool-card"
+          data-name="rewrite rewriter paraphrase text"
+        >
+
+          <span class="status">FREE</span>
+
+          <div class="tool-icon">
+            🔄
+          </div>
+
+          <h3>Text Rewriter</h3>
+
+          <p>
+            Rewrite your text and create a fresh version of your content.
+          </p>
+
+          <a href="#writer" class="tool-link">
+            Try Tool →
+          </a>
+
+        </article>
+
+
+        <!-- BLOG -->
+
+        <article
+          class="tool-card"
+          data-name="blog article content blog writer"
+        >
+
+          <span class="status">FREE</span>
+
+          <div class="tool-icon">
+            📝
+          </div>
+
+          <h3>Blog Ideas</h3>
+
+          <p>
+            Generate ideas and topics for articles, blogs and social content.
+          </p>
+
+          <a href="#writer" class="tool-link">
+            Try Tool →
+          </a>
+
+        </article>
+
+
+        <!-- EMAIL -->
+
+        <article
+          class="tool-card"
+          data-name="email message professional email writing"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            📧
+          </div>
+
+          <h3>Email Writer</h3>
+
+          <p>
+            Create professional emails and messages faster.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+
+        <!-- SOCIAL -->
+
+        <article
+          class="tool-card"
+          data-name="social media caption instagram post"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            📱
+          </div>
+
+          <h3>Social Content</h3>
+
+          <p>
+            Create captions, posts and ideas for social media.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+
+        <!-- GRAMMAR -->
+
+        <article
+          class="tool-card"
+          data-name="grammar spelling correction improve text"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            ✅
+          </div>
+
+          <h3>Grammar Checker</h3>
+
+          <p>
+            Improve your writing and find grammar and spelling mistakes.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <div id="noResults">
+        No writing tools found. Try another search.
+      </div>
+
+
+      <!-- SIMPLE WRITING AREA -->
+
+      <div class="writer-box" id="writer">
+
+        <h2>📝 Quick Writing Space</h2>
+
+        <p>
+          Write your text here and use the buttons to manage your content.
+        </p>
+
+        <textarea
+          id="textArea"
+          placeholder="Start writing here..."
+        ></textarea>
+
+        <div class="writer-actions">
+
+          <button onclick="countWords()">
+            Count Words
+          </button>
+
+          <button class="secondary" onclick="clearText()">
+            Clear
+          </button>
+
+          <button class="secondary" onclick="copyText()">
+            Copy Text
+          </button>
 
         </div>
 
+        <div id="message"></div>
 
-        <div class="tool-card">
+      </div>
 
-            <div class="tool-icon">
-                🧠
-            </div>
+    </section>
 
-            <h3>
-                Claude
-            </h3>
+  </main>
 
-            <p>
-                AI assistant designed for writing,
-                analysis, research and productivity.
-            </p>
 
-            <a
-                href="tool.html?tool=Claude"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+  <!-- FOOTER -->
 
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+
+        <div class="footer-logo">
+          AI<span style="color:#7c6cff;">HUB</span>
         </div>
 
+        <small>
+          Your AI tools discovery hub.
+        </small>
 
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                ✍️
-            </div>
-
-            <h3>
-                Grammarly
-            </h3>
-
-            <p>
-                AI writing assistant for grammar,
-                spelling, clarity and writing improvement.
-            </p>
-
-            <a
-                href="tool.html?tool=Grammarly"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
+      </div>
 
 
-        <div class="tool-card">
+      <div class="footer-links">
 
-            <div class="tool-icon">
-                📝
-            </div>
+        <a href="./">Home</a>
 
-            <h3>
-                QuillBot
-            </h3>
+        <a href="writing.html">Writing</a>
 
-            <p>
-                AI tool for paraphrasing, rewriting,
-                summarizing and improving text.
-            </p>
+        <a href="image.html">Images</a>
 
-            <a
-                href="tool.html?tool=QuillBot"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+        <a href="video.html">Video</a>
 
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🔎
-            </div>
-
-            <h3>
-                Perplexity
-            </h3>
-
-            <p>
-                AI search and research tool for finding
-                information and generating answers.
-            </p>
-
-            <a
-                href="tool.html?tool=Perplexity"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🚀
-            </div>
-
-            <h3>
-                Jasper
-            </h3>
-
-            <p>
-                AI platform for marketing content,
-                copywriting and business content creation.
-            </p>
-
-            <a
-                href="tool.html?tool=Jasper"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
+      </div>
 
     </div>
 
-</section>
+
+    <div class="copyright">
+      © 2026 AIHUB. All rights reserved.
+    </div>
+
+  </footer>
 
 
-<footer>
+  <!-- JAVASCRIPT -->
 
-    <h2>
-        🤖 AIHUB
-    </h2>
+  <script>
 
-    <p>
-        Discover the best AI tools in one place.
-    </p>
+    /* SEARCH */
 
-    <p>
-        © 2026 AIHUB
-    </p>
+    const searchInput =
+      document.getElementById("searchInput");
 
-</footer>
+    const toolCards =
+      document.querySelectorAll(".tool-card");
 
+    const noResults =
+      document.getElementById("noResults");
+
+
+    searchInput.addEventListener("input", function () {
+
+      const search =
+        this.value.toLowerCase().trim();
+
+      let visible = 0;
+
+      toolCards.forEach(function(card) {
+
+        const name =
+          card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+          card.style.display = "block";
+          visible++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+      noResults.style.display =
+        visible === 0 ? "block" : "none";
+
+    });
+
+
+    /* WORD COUNT */
+
+    function countWords() {
+
+      const text =
+        document.getElementById("textArea").value.trim();
+
+      const message =
+        document.getElementById("message");
+
+      if (!text) {
+
+        message.textContent =
+          "Write something first.";
+
+        return;
+
+      }
+
+      const words =
+        text.split(/\s+/).filter(Boolean).length;
+
+      message.textContent =
+        "Word count: " + words;
+
+    }
+
+
+    /* CLEAR */
+
+    function clearText() {
+
+      document.getElementById("textArea").value = "";
+
+      document.getElementById("message").textContent = "";
+
+    }
+
+
+    /* COPY */
+
+    function copyText() {
+
+      const text =
+        document.getElementById("textArea").value;
+
+      if (!text) {
+
+        document.getElementById("message").textContent =
+          "Nothing to copy.";
+
+        return;
+
+      }
+
+      navigator.clipboard.writeText(text);
+
+      document.getElementById("message").textContent =
+        "Text copied successfully.";
+
+    }
+
+  </script>
 
 </body>
-
 </html>
