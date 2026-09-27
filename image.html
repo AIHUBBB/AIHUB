@@ -1,993 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AI Image Tools - AIHUB</title>
-
-  <meta name="description" content="Discover AI image tools on AIHUB for image generation, creative ideas, editing and visual content.">
-  <meta name="keywords" content="AI image tools, AI image generator, AI art, image generation, AI photo tools, free AI tools">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://aihubbb.github.io/AIHUB/image.html">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-  <meta property="og:title" content="AI Image Tools - AIHUB">
-  <meta property="og:description" content="Explore useful AI image and creative visual tools.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aihubbb.github.io/AIHUB/image.html">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #070b14;
-      color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #6c63ff;
-      filter: blur(180px);
-      opacity: .12;
-      top: -200px;
-      left: -150px;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #00d4ff;
-      filter: blur(180px);
-      opacity: .08;
-      bottom: -200px;
-      right: -150px;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* NAVBAR */
-
-    nav {
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(7,11,20,.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: white;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: #7c6cff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #b8c0d4;
-      text-decoration: none;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .nav-button {
-      padding: 10px 17px;
-      border-radius: 10px;
-      background: linear-gradient(135deg,#7467ff,#4d8dff);
-      color: white !important;
-      font-weight: bold;
-    }
-
-    /* HERO */
-
-    .hero {
-      max-width: 950px;
-      margin: auto;
-      padding: 90px 25px 60px;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 30px;
-      background: rgba(124,108,255,.12);
-      border: 1px solid rgba(124,108,255,.25);
-      color: #aaa2ff;
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px,7vw,70px);
-      line-height: 1.05;
-      letter-spacing: -3px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg,#8f83ff,#4fdcff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 25px auto;
-      color: #9ca6bc;
-      font-size: 18px;
-    }
-
-    /* SEARCH */
-
-    .search-box {
-      max-width: 650px;
-      margin: 30px auto;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 18px 22px;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(255,255,255,.05);
-      color: white;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .search-box input:focus {
-      border-color: #7467ff;
-      box-shadow: 0 0 25px rgba(116,103,255,.18);
-    }
-
-    .search-box input::placeholder {
-      color: #778198;
-    }
-
-    /* MAIN */
-
-    .section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 40px 25px 90px;
-    }
-
-    .section-header {
-      margin-bottom: 30px;
-    }
-
-    .section-header small {
-      color: #8175ff;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-header h2 {
-      font-size: 38px;
-      margin-top: 8px;
-    }
-
-    .section-header p {
-      color: #818ba1;
-      margin-top: 8px;
-    }
-
-    /* TOOLS */
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .tool-card {
-      position: relative;
-      padding: 27px;
-      min-height: 250px;
-      border-radius: 20px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.055),
-        rgba(255,255,255,.018)
-      );
-      border: 1px solid rgba(255,255,255,.08);
-      transition: .3s;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(124,108,255,.5);
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .tool-icon {
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      background: rgba(124,108,255,.12);
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .tool-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .tool-card p {
-      color: #8993a9;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .tool-link {
-      color: #9388ff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .status {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      font-size: 11px;
-      padding: 5px 9px;
-      border-radius: 20px;
-      background: rgba(70,210,140,.12);
-      color: #5be09b;
-      border: 1px solid rgba(70,210,140,.2);
-    }
-
-    /* IMAGE PROMPT AREA */
-
-    .generator-box {
-      margin-top: 50px;
-      padding: 30px;
-      border-radius: 22px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .generator-box h2 {
-      margin-bottom: 10px;
-    }
-
-    .generator-box p {
-      color: #8993a9;
-      margin-bottom: 20px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 150px;
-      resize: vertical;
-      padding: 18px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: #0b101c;
-      color: white;
-      outline: none;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-    }
-
-    textarea:focus {
-      border-color: #7467ff;
-    }
-
-    .generator-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      padding: 12px 20px;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      background: linear-gradient(135deg,#7467ff,#4d8dff);
-    }
-
-    button.secondary {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-    }
-
-    #message {
-      color: #7f89a0;
-      margin-top: 15px;
-      font-size: 13px;
-    }
-
-    /* INFO */
-
-    .info-grid {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .info-card {
-      padding: 25px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .info-card div {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .info-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .info-card p {
-      color: #8993a9;
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,.07);
-      padding: 35px 25px;
-      color: #737d94;
-    }
-
-    .footer-container {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-logo {
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #737d94;
-      text-decoration: none;
-      font-size: 13px;
-    }
-
-    .copyright {
-      text-align: center;
-      margin-top: 25px;
-      font-size: 12px;
-      color: #555e72;
-    }
-
-    #noResults {
-      display: none;
-      text-align: center;
-      color: #8b95aa;
-      padding: 30px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width:850px) {
-
-      .tools-grid,
-      .info-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width:600px) {
-
-      .hero {
-        padding-top: 70px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .tools-grid,
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-header h2 {
-        font-size: 30px;
-      }
-
-      .nav-container {
-        padding: 15px 18px;
-      }
-
-      .generator-box {
-        padding: 20px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Image Tools - AIHUB | AI Image Generator</title>
+
+<meta name="description" content="Discover AI image tools for image generation, AI art, photo editing, background removal, upscaling and logo creation.">
+<meta name="keywords" content="AI image generator, AI art, AI photo editor, background remover, AI logo maker, image upscaler">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aihubbb.github.io/AIHUB/image.html">
+
+<meta property="og:title" content="AI Image Tools - AIHUB">
+<meta property="og:description" content="Explore AI image generation, editing and creative image tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aihubbb.github.io/AIHUB/image.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-LG88MPD4NY');
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{
+background:
+radial-gradient(circle at top left,#1d1742,transparent 35%),
+radial-gradient(circle at top right,#102247,transparent 35%),
+#070711;
+color:#fff;
+min-height:100vh
+}
+nav{
+position:sticky;top:0;z-index:1000;
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 7%;background:rgba(7,7,17,.88);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.08)
+}
+.logo{
+font-size:26px;font-weight:800;
+background:linear-gradient(90deg,#8b5cf6,#3b82f6);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover,nav a.active{color:#fff}
+
+.hero{text-align:center;padding:90px 20px 60px}
+.badge{
+display:inline-block;padding:8px 15px;border-radius:30px;
+background:rgba(139,92,246,.12);
+border:1px solid rgba(139,92,246,.3);
+color:#b9a1ff;font-size:13px;margin-bottom:20px
+}
+.hero h1{
+font-size:55px;margin-bottom:20px;
+background:linear-gradient(90deg,#fff,#a78bfa,#60a5fa);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+.hero p{max-width:700px;margin:auto;color:#999;font-size:18px;line-height:1.7}
+
+.search{max-width:700px;margin:0 auto 60px;padding:0 20px}
+.search input{
+width:100%;padding:17px 20px;border-radius:14px;
+border:1px solid rgba(255,255,255,.1);
+background:rgba(255,255,255,.05);
+color:#fff;outline:none;font-size:15px
+}
+
+.container{width:86%;max-width:1200px;margin:auto}
+.title{margin-bottom:30px}
+.title h2{font-size:30px;margin-bottom:8px}
+.title p{color:#888}
+
+.grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:20px;margin-bottom:80px
+}
+.card{
+padding:25px;border-radius:20px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s
+}
+.card:hover{
+transform:translateY(-5px);
+border-color:rgba(139,92,246,.5)
+}
+.icon{
+width:52px;height:52px;border-radius:15px;
+display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#8b5cf6,#2563eb);
+font-size:24px;margin-bottom:18px
+}
+.card h3{margin-bottom:10px}
+.card p{color:#999;font-size:14px;line-height:1.6;margin-bottom:18px}
+.tag{
+display:inline-block;padding:5px 10px;border-radius:20px;
+background:rgba(34,197,94,.12);color:#6ee7a0;font-size:11px
+}
+.soon{background:rgba(251,191,36,.12);color:#fbbf24}
+
+.generator{
+padding:35px;border-radius:25px;
+background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(37,99,235,.08));
+border:1px solid rgba(139,92,246,.2);
+margin-bottom:80px
+}
+.generator h2{margin-bottom:10px}
+.generator p{color:#999;margin-bottom:20px}
+textarea{
+width:100%;min-height:180px;
+background:rgba(0,0,0,.3);
+border:1px solid rgba(255,255,255,.1);
+border-radius:15px;padding:18px;
+color:#fff;outline:none;
+font-size:15px;line-height:1.6
+}
+.buttons{display:flex;gap:10px;margin-top:15px}
+button{
+border:0;cursor:pointer;padding:12px 18px;
+border-radius:12px;font-weight:600
+}
+.primary{background:linear-gradient(90deg,#8b5cf6,#2563eb);color:#fff}
+.secondary{background:rgba(255,255,255,.08);color:#fff}
+
+footer{
+text-align:center;padding:35px 20px;
+border-top:1px solid rgba(255,255,255,.07);
+color:#777;font-size:13px
+}
+footer span{color:#9b7cff}
+
+@media(max-width:900px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.hero h1{font-size:44px}
+}
+@media(max-width:650px){
+nav ul{gap:10px}
+nav a{font-size:11px}
+.grid{grid-template-columns:1fr}
+.container{width:92%}
+.hero h1{font-size:38px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-
-  <nav>
-    <div class="nav-container">
-
-      <a href="./" class="logo">
-        AI<span>HUB</span>
-      </a>
-
-      <ul class="nav-links">
-
-        <li>
-          <a href="./">Home</a>
-        </li>
-
-        <li>
-          <a href="writing.html">Writing</a>
-        </li>
-
-        <li>
-          <a href="image.html">Images</a>
-        </li>
-
-        <li>
-          <a href="video.html">Video</a>
-        </li>
-
-        <li>
-          <a href="./" class="nav-button">
-            All Tools
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
-  </nav>
-
-
-  <!-- HERO -->
-
-  <header class="hero">
-
-    <div class="badge">
-      🎨 AI Image Tools
-    </div>
-
-    <h1>
-      Create Amazing Visuals
-      <br>
-      <span class="gradient-text">With AI.</span>
-    </h1>
-
-    <p>
-      Discover useful AI image tools for creating,
-      editing and exploring creative visual content.
-    </p>
-
-    <div class="search-box">
-
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="🔎 Search image tools..."
-        aria-label="Search image tools"
-      >
-
-    </div>
-
-  </header>
-
-
-  <!-- MAIN -->
-
-  <main>
-
-    <section class="section">
-
-      <div class="section-header">
-
-        <small>Images</small>
-
-        <h2>AI Image Tools</h2>
-
-        <p>
-          Explore creative tools for AI-powered image creation and visual content.
-        </p>
-
-      </div>
-
-
-      <div class="tools-grid" id="toolsGrid">
-
-
-        <!-- GENERATOR -->
-
-        <article
-          class="tool-card"
-          data-name="ai image generator image generation text to image art"
-        >
-
-          <span class="status">FREE</span>
-
-          <div class="tool-icon">
-            🖼️
-          </div>
-
-          <h3>AI Image Generator</h3>
-
-          <p>
-            Turn creative ideas and prompts into AI-generated images.
-          </p>
-
-          <a href="#generator" class="tool-link">
-            Try Tool →
-          </a>
-
-        </article>
-
-
-        <!-- AI ART -->
-
-        <article
-          class="tool-card"
-          data-name="ai art digital art creative image"
-        >
-
-          <span class="status">FREE</span>
-
-          <div class="tool-icon">
-            🎨
-          </div>
-
-          <h3>AI Art</h3>
-
-          <p>
-            Explore creative AI art ideas and visual styles.
-          </p>
-
-          <a href="#generator" class="tool-link">
-            Explore →
-          </a>
-
-        </article>
-
-
-        <!-- PHOTO -->
-
-        <article
-          class="tool-card"
-          data-name="ai photo photo editing image editor"
-        >
-
-          <span class="status">SOON</span>
-
-          <div class="tool-icon">
-            📸
-          </div>
-
-          <h3>AI Photo Editor</h3>
-
-          <p>
-            Discover AI-powered tools for editing and improving images.
-          </p>
-
-          <a href="#toolsGrid" class="tool-link">
-            Coming Soon →
-          </a>
-
-        </article>
-
-
-        <!-- BACKGROUND -->
-
-        <article
-          class="tool-card"
-          data-name="background remover remove background image"
-        >
-
-          <span class="status">SOON</span>
-
-          <div class="tool-icon">
-            ✂️
-          </div>
-
-          <h3>Background Remover</h3>
-
-          <p>
-            Remove image backgrounds with AI-powered technology.
-          </p>
-
-          <a href="#toolsGrid" class="tool-link">
-            Coming Soon →
-          </a>
-
-        </article>
-
-
-        <!-- UPSCALER -->
-
-        <article
-          class="tool-card"
-          data-name="image upscaler improve quality resolution"
-        >
-
-          <span class="status">SOON</span>
-
-          <div class="tool-icon">
-            🔍
-          </div>
-
-          <h3>Image Upscaler</h3>
-
-          <p>
-            Improve image resolution and quality with AI.
-          </p>
-
-          <a href="#toolsGrid" class="tool-link">
-            Coming Soon →
-          </a>
-
-        </article>
-
-
-        <!-- LOGO -->
-
-        <article
-          class="tool-card"
-          data-name="logo generator ai logo branding design"
-        >
-
-          <span class="status">SOON</span>
-
-          <div class="tool-icon">
-            💎
-          </div>
-
-          <h3>AI Logo Maker</h3>
-
-          <p>
-            Create logo concepts and branding ideas using AI.
-          </p>
-
-          <a href="#toolsGrid" class="tool-link">
-            Coming Soon →
-          </a>
-
-        </article>
-
-      </div>
-
-
-      <div id="noResults">
-        No image tools found. Try another search.
-      </div>
-
-
-      <!-- PROMPT AREA -->
-
-      <div class="generator-box" id="generator">
-
-        <h2>🪄 Image Prompt Generator</h2>
-
-        <p>
-          Write your idea below and create a ready-to-use prompt for an AI image generator.
-        </p>
-
-        <textarea
-          id="promptInput"
-          placeholder="Example: A futuristic city at night, neon lights, cinematic atmosphere..."
-        ></textarea>
-
-        <div class="generator-actions">
-
-          <button onclick="generatePrompt()">
-            ✨ Improve Prompt
-          </button>
-
-          <button class="secondary" onclick="clearPrompt()">
-            Clear
-          </button>
-
-          <button class="secondary" onclick="copyPrompt()">
-            Copy Prompt
-          </button>
-
-        </div>
-
-        <div id="message"></div>
-
-      </div>
-
-
-      <!-- INFO -->
-
-      <div class="info-grid">
-
-        <div class="info-card">
-
-          <div>💡</div>
-
-          <h3>Creative Ideas</h3>
-
-          <p>
-            Turn simple ideas into detailed visual concepts.
-          </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <div>⚡</div>
-
-          <h3>Fast Creation</h3>
-
-          <p>
-            AI can help you transform text ideas into visual content.
-          </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <div>🌐</div>
-
-          <h3>Discover More</h3>
-
-          <p>
-            Find useful AI image tools from one simple hub.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-container">
-
-      <div>
-
-        <div class="footer-logo">
-          AI<span style="color:#7c6cff;">HUB</span>
-        </div>
-
-        <small>
-          Your AI tools discovery hub.
-        </small>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="./">Home</a>
-
-        <a href="writing.html">Writing</a>
-
-        <a href="image.html">Images</a>
-
-        <a href="video.html">Video</a>
-
-      </div>
-
-    </div>
-
-
-    <div class="copyright">
-      © 2026 AIHUB. All rights reserved.
-    </div>
-
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    /* SEARCH */
-
-    const searchInput =
-      document.getElementById("searchInput");
-
-    const toolCards =
-      document.querySelectorAll(".tool-card");
-
-    const noResults =
-      document.getElementById("noResults");
-
-
-    searchInput.addEventListener("input", function () {
-
-      const search =
-        this.value.toLowerCase().trim();
-
-      let visible = 0;
-
-      toolCards.forEach(function(card) {
-
-        const name =
-          card.dataset.name.toLowerCase();
-
-        if (name.includes(search)) {
-
-          card.style.display = "block";
-          visible++;
-
-        } else {
-
-          card.style.display = "none";
-
-        }
-
-      });
-
-      noResults.style.display =
-        visible === 0 ? "block" : "none";
-
-    });
-
-
-    /* IMPROVE PROMPT */
-
-    function generatePrompt() {
-
-      const input =
-        document.getElementById("promptInput");
-
-      const message =
-        document.getElementById("message");
-
-      const text =
-        input.value.trim();
-
-      if (!text) {
-
-        message.textContent =
-          "Write an image idea first.";
-
-        return;
-
-      }
-
-      const improved =
-        text +
-        ", highly detailed, cinematic lighting, professional composition, realistic details, high quality, sharp focus";
-
-      input.value = improved;
-
-      message.textContent =
-        "Prompt improved successfully.";
-
-    }
-
-
-    /* CLEAR */
-
-    function clearPrompt() {
-
-      document.getElementById("promptInput").value = "";
-
-      document.getElementById("message").textContent = "";
-
-    }
-
-
-    /* COPY */
-
-    function copyPrompt() {
-
-      const input =
-        document.getElementById("promptInput");
-
-      const text =
-        input.value;
-
-      const message =
-        document.getElementById("message");
-
-      if (!text) {
-
-        message.textContent =
-          "Nothing to copy.";
-
-        return;
-
-      }
-
-      navigator.clipboard.writeText(text);
-
-      message.textContent =
-        "Prompt copied successfully.";
-
-    }
-
-  </script>
+<nav>
+<div class="logo">AIHUB</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="writing.html">Writing</a></li>
+<li><a class="active" href="image.html">Images</a></li>
+<li><a href="video.html">Video</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="badge">🎨 AI Image Tools</div>
+<h1>Create Amazing Images With AI</h1>
+<p>Explore AI image generation, editing, background removal, upscaling and creative tools.</p>
+</section>
+
+<div class="search">
+<input id="search" onkeyup="searchTools()" placeholder="🔍 Search image tools...">
+</div>
+
+<main class="container">
+
+<div class="title">
+<h2>AI Image Tools</h2>
+<p>Explore useful tools for images and creative projects.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>AI Image Generator</h3>
+<p>Create creative image concepts from text prompts.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+<div class="card">
+<div class="icon">🖌️</div>
+<h3>AI Art</h3>
+<p>Explore creative AI art styles and ideas.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+<div class="card">
+<div class="icon">📷</div>
+<h3>AI Photo Editor</h3>
+<p>Improve and edit photos using AI-powered tools.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+<div class="card">
+<div class="icon">✂️</div>
+<h3>Background Remover</h3>
+<p>Remove image backgrounds quickly.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+<div class="card">
+<div class="icon">🔎</div>
+<h3>Image Upscaler</h3>
+<p>Improve image resolution and quality.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+<h3>AI Logo Maker</h3>
+<p>Create ideas for modern logos and brands.</p>
+<span class="tag soon">SOON</span>
+</div>
+
+</div>
+
+<section class="generator">
+
+<h2>✨ Image Prompt Generator</h2>
+
+<p>Write your image idea and create a more detailed prompt.</p>
+
+<textarea id="prompt" placeholder="Example: A futuristic city at night..."></textarea>
+
+<div class="buttons">
+<button class="primary" onclick="improvePrompt()">✨ Improve Prompt</button>
+<button class="secondary" onclick="copyPrompt()">📋 Copy</button>
+<button class="secondary" onclick="clearPrompt()">🗑 Clear</button>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 <span>AIHUB</span> — AI Tools Hub
+</footer>
+
+<script>
+function searchTools(){
+const value=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
+}
+
+function improvePrompt(){
+const box=document.getElementById("prompt");
+const text=box.value.trim();
+
+if(!text){
+alert("Write an image idea first.");
+return;
+}
+
+box.value=text+", highly detailed, cinematic lighting, realistic details, professional composition, vibrant atmosphere, high quality, 4K";
+}
+
+function copyPrompt(){
+const box=document.getElementById("prompt");
+
+if(!box.value.trim()){
+alert("Nothing to copy.");
+return;
+}
+
+navigator.clipboard.writeText(box.value);
+alert("Prompt copied!");
+}
+
+function clearPrompt(){
+document.getElementById("prompt").value="";
+}
+</script>
 
 </body>
 </html>
