@@ -1,284 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>AI Music Tools - AIHUB</title>
 
-    <title>Best AI Music Generators 2026 | AIHUB</title>
+<meta name="description" content="AI music ideas, song concepts and creative prompts.">
 
-    <meta
-        name="description"
-        content="Discover the best AI music generators and AI music tools in 2026. Explore Suno, ElevenLabs, Udio, AIVA, Soundraw and Beatoven on AIHUB."
-    >
-
-    <meta
-        name="keywords"
-        content="AI music generators, best AI music generators, AI music tools, AI song generators, Suno, ElevenLabs, Udio, AIVA, Soundraw, Beatoven"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        name="author"
-        content="AIHUB"
-    >
-
-    <link
-        rel="canonical"
-        href="https://aihubbb.github.io/AIHUB/music.html"
-    >
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<header class="navbar">
 
-<nav>
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
 
-    <div class="logo">
-        🤖 AIHUB
-    </div>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="index.html#categories">
-            Categories
-        </a>
-
-        <a href="index.html#tools">
-            Tools
-        </a>
-
-    </div>
-
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a class="active" href="music.html">Music</a>
 </nav>
-
-
-<header>
-
-    <div class="badge">
-        🎵 AI MUSIC TOOLS
-    </div>
-
-    <h1>
-        Best AI Music Generators in 2026
-    </h1>
-
-    <p>
-        Discover powerful AI tools for creating music,
-        songs, vocals, soundtracks and audio content.
-    </p>
 
 </header>
 
 
-<section>
+<main class="page">
 
-    <h2>
-        AI Music Generation Tools
-    </h2>
+<div class="page-header">
 
-    <p>
-        Explore popular AI music tools that can help
-        you generate songs, create vocals, produce soundtracks
-        and experiment with new musical ideas.
-    </p>
+<p class="small-title">MUSIC</p>
 
+<h1>🎵 AI Music</h1>
 
-    <div class="tools-grid">
+<p>
+Create song concepts and music ideas.
+</p>
 
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🎵
-            </div>
-
-            <h3>
-                Suno
-            </h3>
-
-            <p>
-                AI music platform for creating complete songs
-                and musical tracks from text prompts.
-            </p>
-
-            <a
-                href="tool.html?tool=Suno"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
+</div>
 
 
-        <div class="tool-card">
+<div class="workspace">
 
-            <div class="tool-icon">
-                🎙️
-            </div>
+<h2>Song Idea Generator</h2>
 
-            <h3>
-                ElevenLabs
-            </h3>
+<input
+id="musicTopic"
+placeholder="Song topic e.g. dreams, football, friendship..."
+>
 
-            <p>
-                AI audio platform for voice generation,
-                speech synthesis and creative audio production.
-            </p>
+<select id="musicGenre">
 
-            <a
-                href="tool.html?tool=ElevenLabs"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+<option>Pop</option>
+<option>Hip Hop</option>
+<option>Rap</option>
+<option>Rock</option>
+<option>Electronic</option>
+<option>R&B</option>
+<option>Lo-fi</option>
 
-        </div>
+</select>
 
+<button
+class="action-btn"
+onclick="generateMusicIdea()"
+>
+Generate Song Idea
+</button>
 
-        <div class="tool-card">
+<div id="musicOutput" class="output">
+Your music concept will appear here.
+</div>
 
-            <div class="tool-icon">
-                🎧
-            </div>
-
-            <h3>
-                Udio
-            </h3>
-
-            <p>
-                AI music creation platform for generating
-                original songs and music from text descriptions.
-            </p>
-
-            <a
-                href="tool.html?tool=Udio"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
+</div>
 
 
-        <div class="tool-card">
+<div class="info-grid" style="margin-top:30px;">
 
-            <div class="tool-icon">
-                🎼
-            </div>
+<div class="info-card">
+<h3>🎤 Song Concepts</h3>
+<p>Create themes and concepts for new songs.</p>
+</div>
 
-            <h3>
-                AIVA
-            </h3>
+<div class="info-card">
+<h3>🎧 Genres</h3>
+<p>Explore different musical styles and moods.</p>
+</div>
 
-            <p>
-                AI music composer for creating soundtracks,
-                instrumental music and original compositions.
-            </p>
+<div class="info-card">
+<h3>🎼 Creativity</h3>
+<p>Use AI-assisted ideas as inspiration for your own projects.</p>
+</div>
 
-            <a
-                href="tool.html?tool=AIVA"
-                class="try-button"
-            >
-                View Tool →
-            </a>
+</div>
 
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🎹
-            </div>
-
-            <h3>
-                Soundraw
-            </h3>
-
-            <p>
-                AI music generator for creating customizable
-                royalty-free music for videos and creative projects.
-            </p>
-
-            <a
-                href="tool.html?tool=Soundraw"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🎶
-            </div>
-
-            <h3>
-                Beatoven
-            </h3>
-
-            <p>
-                AI-powered music generation platform for creating
-                background music and soundtracks for content.
-            </p>
-
-            <a
-                href="tool.html?tool=Beatoven"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
+</main>
 
 
 <footer>
 
-    <h2>
-        🤖 AIHUB
-    </h2>
+<div class="footer-main">
 
-    <p>
-        Discover the best AI tools in one place.
-    </p>
+<div>
+<a href="index.html" class="logo"><span>AI</span>HUB</a>
+<p>Useful AI tools in one place.</p>
+</div>
 
-    <p>
-        © 2026 AIHUB
-    </p>
+<div class="footer-links">
+
+<div>
+<h4>Tools</h4>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 AIHUB
+</div>
 
 </footer>
 
+<script src="script.js"></script>
 
 </body>
-
 </html>
