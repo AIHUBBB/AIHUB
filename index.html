@@ -1,293 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AIHUB - AI Tools for Everyone</title>
+  <title>AIHUB - AI Tools for Everyone</title>
 
-<meta name="description" content="AIHUB brings useful AI tools for writing, images, video, business and music together in one place.">
-<meta name="keywords" content="AI tools, artificial intelligence, AI writing, AI image, AI video, AI business, AI music">
+  <meta
+    name="description"
+    content="AIHUB brings useful AI tools for writing, images, video, business, music and productivity in one place."
+  >
 
-<link rel="canonical" href="https://aihubbb.github.io/AIHUB/">
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
+  <meta
+    name="keywords"
+    content="AI tools, artificial intelligence, AI writing, AI image, AI video, AI business, AI music"
+  >
 
-<meta property="og:title" content="AIHUB - AI Tools">
-<meta property="og:description" content="Discover useful AI tools in one place.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aihubbb.github.io/AIHUB/">
+  <meta name="author" content="AIHUB">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LG88MPD4NY');
-</script>
+  <link rel="canonical" href="https://aihubbb.github.io/AIHUB/">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AIHUB - AI Tools for Everyone">
+  <meta
+    property="og:description"
+    content="Discover useful AI tools for writing, images, video, business, music and productivity."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aihubbb.github.io/AIHUB/">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-LG88MPD4NY');
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
+
+<!-- ================= NAVBAR ================= -->
+
 <header class="navbar">
 
-<a href="index.html" class="logo">
-<span>AI</span>HUB
-</a>
+  <div class="container nav-inner">
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <a href="index.html" class="logo">
+      <span>AI</span>HUB
+    </a>
 
-<nav id="navMenu">
-<a class="active" href="index.html">Home</a>
-<a href="writing.html">Writing</a>
-<a href="image.html">Images</a>
-<a href="video.html">Video</a>
-<a href="business.html">Business</a>
-<a href="music.html">Music</a>
-</nav>
+
+    <button
+      class="menu-toggle"
+      onclick="toggleMenu()"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+
+    <nav id="mainNav">
+
+      <a href="index.html" class="active">
+        Home
+      </a>
+
+      <a href="writing.html">
+        Writing
+      </a>
+
+      <a href="image.html">
+        Images
+      </a>
+
+      <a href="video.html">
+        Video
+      </a>
+
+      <a href="business.html">
+        Business
+      </a>
+
+      <a href="music.html">
+        Music
+      </a>
+
+      <a href="more-tools.html">
+        More Tools
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
 
 </header>
+
+
+
+<!-- ================= HERO ================= -->
 
 <main>
 
 <section class="hero">
 
-<div class="hero-badge">🚀 Your AI Toolbox</div>
+  <div class="container hero-content">
 
-<h1>
-Everything AI.<br>
-<span>One Powerful Hub.</span>
-</h1>
+    <div class="hero-text">
 
-<p>
-Discover useful AI tools for writing, images, videos, business,
-music and productivity.
-</p>
+      <span class="badge">
+        🚀 YOUR AI TOOLBOX
+      </span>
 
-<div class="search-box">
 
-<input
-id="siteSearch"
-type="text"
-placeholder="Search AI tools..."
-onkeyup="searchTools()"
+      <h1>
+        Everything AI.
+        <span class="gradient-text">
+          One Powerful Hub.
+        </span>
+      </h1>
+
+
+      <p>
+        Discover useful AI tools for writing, images, video,
+        business, music and everyday productivity.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="more-tools.html"
+          class="btn btn-primary"
+        >
+          Explore All Tools →
+        </a>
+
+
+        <a
+          href="#tools"
+          class="btn btn-secondary"
+        >
+          View Tools
+        </a>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+
+        <span>🔎</span>
+
+        <input
+          id="toolSearch"
+          type="text"
+          placeholder="Search AI tools..."
+          onkeyup="searchTools()"
+        >
+
+      </div>
+
+    </div>
+
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+      <div class="ai-orb">
+
+        <div class="orb-glow"></div>
+
+        <div class="orb-content">
+
+          <span>AI</span>
+
+          <small>
+            POWERED
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= TOOLS ================= -->
+
+<section
+  class="section"
+  id="tools"
 >
 
-<button onclick="searchTools()">Search</button>
+  <div class="container">
 
-</div>
+    <div class="section-heading">
+
+      <span class="badge">
+        AI TOOLS
+      </span>
+
+      <h2>
+        Explore AIHUB
+      </h2>
+
+      <p>
+        Choose a tool and start creating.
+      </p>
+
+    </div>
+
+
+
+    <div class="tools-grid" id="toolsGrid">
+
+
+      <!-- WRITING -->
+
+      <div
+        class="tool-card"
+        data-tool="writing ai writer text content"
+      >
+
+        <div class="tool-icon">
+          ✍️
+        </div>
+
+        <h3>
+          AI Writing
+        </h3>
+
+        <p>
+          Write, clean and improve your text with useful writing tools.
+        </p>
+
+        <a
+          href="writing.html"
+          class="tool-link"
+        >
+          Open Tool →
+        </a>
+
+      </div>
+
+
+
+      <!-- IMAGES -->
+
+      <div
+        class="tool-card"
+        data-tool="images image prompt generator"
+      >
+
+        <div class="tool-icon">
+          🎨
+        </div>
+
+        <h3>
+          AI Images
+        </h3>
+
+        <p>
+          Create detailed prompts for AI image generation.
+        </p>
+
+        <a
+          href="image.html"
+          class="tool-link"
+        >
+          Open Tool →
+        </a>
+
+      </div>
+
+
+
+      <!-- VIDEO -->
+
+      <div
+        class="tool-card"
+        data-tool="video youtube video ideas"
+      >
+
+        <div class="tool-icon">
+          🎬
+        </div>
+
+        <h3>
+          AI Video
+        </h3>
+
+        <p>
+          Generate video concepts, hooks and content ideas.
+        </p>
+
+        <a
+          href="video.html"
+          class="tool-link"
+        >
+          Open Tool →
+        </a>
+
+      </div>
+
+
+
+      <!-- BUSINESS -->
+
+      <div
+        class="tool-card"
+        data-tool="business startup marketing business ideas"
+      >
+
+        <div class="tool-icon">
+          💼
+        </div>
+
+        <h3>
+          AI Business
+        </h3>
+
+        <p>
+          Find business ideas and improve your productivity.
+        </p>
+
+        <a
+          href="business.html"
+          class="tool-link"
+        >
+          Open Tool →
+        </a>
+
+      </div>
+
+
+
+      <!-- MUSIC -->
+
+      <div
+        class="tool-card"
+        data-tool="music song lyrics genre"
+      >
+
+        <div class="tool-icon">
+          🎵
+        </div>
+
+        <h3>
+          AI Music
+        </h3>
+
+        <p>
+          Generate song concepts, themes and music ideas.
+        </p>
+
+        <a
+          href="music.html"
+          class="tool-link"
+        >
+          Open Tool →
+        </a>
+
+      </div>
+
+
+
+      <!-- MORE -->
+
+      <div
+        class="tool-card featured-tool"
+        data-tool="more tools productivity calculator cv seo password translator"
+      >
+
+        <div class="tool-icon">
+          ⚡
+        </div>
+
+        <h3>
+          More Tools
+        </h3>
+
+        <p>
+          Explore even more productivity and AI-inspired tools.
+        </p>
+
+        <a
+          href="more-tools.html"
+          class="tool-link"
+        >
+          Explore More →
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- NO SEARCH RESULT -->
+
+    <div
+      id="noResults"
+      style="
+        display:none;
+        text-align:center;
+        margin-top:30px;
+        color:#9999ad;
+      "
+    >
+      No tools found.
+    </div>
+
+
+  </div>
 
 </section>
 
 
-<section class="section">
 
-<div class="section-heading">
-<p class="small-title">EXPLORE</p>
-<h2>AI Tools</h2>
-<p>Choose a category and start creating.</p>
-</div>
-
-
-<div class="tools-grid" id="toolsGrid">
-
-<a href="writing.html" class="tool-card" data-search="writing text article copy">
-<div class="tool-icon purple">✍️</div>
-<h3>AI Writing</h3>
-<p>Write, rewrite, improve and organize your text.</p>
-<span>Explore →</span>
-</a>
-
-
-<a href="image.html" class="tool-card" data-search="image photo picture art design">
-<div class="tool-icon blue">🎨</div>
-<h3>AI Images</h3>
-<p>Create image ideas and powerful AI prompts.</p>
-<span>Explore →</span>
-</a>
-
-
-<a href="video.html" class="tool-card" data-search="video film youtube content">
-<div class="tool-icon pink">🎬</div>
-<h3>AI Video</h3>
-<p>Create video ideas, scripts and concepts.</p>
-<span>Explore →</span>
-</a>
-
-
-<a href="business.html" class="tool-card" data-search="business marketing startup company money">
-<div class="tool-icon green">💼</div>
-<h3>AI Business</h3>
-<p>Business ideas, marketing and productivity tools.</p>
-<span>Explore →</span>
-</a>
-
-
-<a href="music.html" class="tool-card" data-search="music song audio beat">
-<div class="tool-icon orange">🎵</div>
-<h3>AI Music</h3>
-<p>Generate song concepts, lyrics ideas and music prompts.</p>
-<span>Explore →</span>
-</a>
-
-
-<div class="tool-card coming-soon">
-
-<div class="tool-icon cyan">⚡</div>
-
-<h3>More Tools</h3>
-
-<p>
-More AI utilities are coming soon.
-</p>
-
-<span>Coming Soon</span>
-
-</div>
-
-</div>
-
-</section>
-
+<!-- ================= STATS ================= -->
 
 <section class="stats-section">
 
-<div class="stats">
+  <div class="container stats-grid">
 
-<div>
-<strong>5+</strong>
-<span>Categories</span>
-</div>
 
-<div>
-<strong>24/7</strong>
-<span>Available</span>
-</div>
+    <div class="stat">
 
-<div>
-<strong>100%</strong>
-<span>Web Based</span>
-</div>
+      <strong>
+        15+
+      </strong>
 
-</div>
+      <span>
+        Useful Tools
+      </span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+      <strong>
+        24/7
+      </strong>
+
+      <span>
+        Available
+      </span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+      <strong>
+        ⚡
+      </strong>
+
+      <span>
+        Fast & Simple
+      </span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+      <strong>
+        🌍
+      </strong>
+
+      <span>
+        For Everyone
+      </span>
+
+    </div>
+
+
+  </div>
 
 </section>
 
+
+
+<!-- ================= WHY AIHUB ================= -->
 
 <section class="section">
 
-<div class="section-heading">
+  <div class="container">
 
-<p class="small-title">WHY AIHUB</p>
+    <div class="section-heading">
 
-<h2>Simple. Fast. Useful.</h2>
+      <span class="badge">
+        WHY AIHUB
+      </span>
 
-<p>
-Everything you need to explore AI without jumping between dozens of websites.
-</p>
+      <h2>
+        Simple. Useful. Fast.
+      </h2>
 
-</div>
+      <p>
+        AIHUB is designed to make useful tools easy to discover.
+      </p>
+
+    </div>
 
 
-<div class="features-grid">
 
-<div class="feature-card">
-<div>⚡</div>
-<h3>Fast</h3>
-<p>Simple interfaces designed to help you get started quickly.</p>
-</div>
+    <div class="info-grid">
 
-<div class="feature-card">
-<div>🎯</div>
-<h3>Useful</h3>
-<p>Tools and ideas focused on real everyday tasks.</p>
-</div>
 
-<div class="feature-card">
-<div>📱</div>
-<h3>Responsive</h3>
-<p>Use AIHUB comfortably on desktop, tablet or phone.</p>
-</div>
+      <div class="info-card">
 
-<div class="feature-card">
-<div>🌍</div>
-<h3>One Place</h3>
-<p>Different AI categories organized in one clean website.</p>
-</div>
+        <div class="info-icon">
+          ⚡
+        </div>
 
-</div>
+        <h3>
+          Fast
+        </h3>
+
+        <p>
+          Open a tool and start working without complicated setup.
+        </p>
+
+      </div>
+
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          🎯
+        </div>
+
+        <h3>
+          Simple
+        </h3>
+
+        <p>
+          Clean interfaces designed to be easy for beginners.
+        </p>
+
+      </div>
+
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          🚀
+        </div>
+
+        <h3>
+          Growing
+        </h3>
+
+        <p>
+          New tools and features can be added as AIHUB grows.
+        </p>
+
+      </div>
+
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          🌍
+        </div>
+
+        <h3>
+          Accessible
+        </h3>
+
+        <p>
+          AIHUB is available online from desktop and mobile devices.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<section class="cta">
 
-<div>
+<!-- ================= CTA ================= -->
 
-<p class="small-title">START NOW</p>
+<section class="section">
 
-<h2>Explore the world of AI.</h2>
+  <div class="container">
 
-<p>
-Find your next AI tool and start creating.
-</p>
+    <div class="cta-box">
 
-<a href="writing.html" class="primary-btn">
-Explore Tools →
-</a>
+      <span class="badge">
+        START NOW
+      </span>
 
-</div>
+      <h2>
+        Ready to explore AI?
+      </h2>
+
+      <p>
+        Discover useful tools and find the right one for your next project.
+      </p>
+
+
+      <a
+        href="more-tools.html"
+        class="btn btn-primary"
+      >
+        Explore More Tools →
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
+
 
 </main>
 
 
-<footer>
 
-<div class="footer-main">
+<!-- ================= FOOTER ================= -->
 
-<div>
-<a href="index.html" class="logo">
-<span>AI</span>HUB
-</a>
+<footer class="footer">
 
-<p>
-Useful AI tools in one place.
-</p>
-</div>
+  <div class="container footer-inner">
 
 
-<div class="footer-links">
+    <div>
 
-<div>
-<h4>Tools</h4>
-<a href="writing.html">Writing</a>
-<a href="image.html">Images</a>
-<a href="video.html">Video</a>
-<a href="business.html">Business</a>
-<a href="music.html">Music</a>
-</div>
+      <a
+        href="index.html"
+        class="logo"
+      >
+        <span>AI</span>HUB
+      </a>
 
-<div>
-<h4>AIHUB</h4>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-</div>
+      <p>
+        Useful AI tools in one place.
+      </p>
 
-</div>
+    </div>
 
-</div>
 
-<div class="footer-bottom">
-© 2026 AIHUB. All rights reserved.
-</div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="more-tools.html">
+        More Tools
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="terms.html">
+        Terms
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      © 2026 AIHUB. All rights reserved.
+    </p>
+
+  </div>
 
 </footer>
 
+
+
+<!-- ================= SCRIPT ================= -->
+
 <script src="script.js"></script>
+
+
+<script>
+
+function searchTools() {
+
+  const searchInput =
+    document.getElementById("toolSearch");
+
+  const query =
+    searchInput.value.toLowerCase().trim();
+
+  const cards =
+    document.querySelectorAll(".tool-card");
+
+  const noResults =
+    document.getElementById("noResults");
+
+  let found = false;
+
+
+  cards.forEach(card => {
+
+    const text =
+      (
+        card.innerText +
+        " " +
+        card.dataset.tool
+      ).toLowerCase();
+
+
+    if (text.includes(query)) {
+
+      card.style.display = "";
+
+      found = true;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  if (query === "") {
+
+    cards.forEach(card => {
+      card.style.display = "";
+    });
+
+    noResults.style.display = "none";
+
+    return;
+
+  }
+
+
+  noResults.style.display =
+    found ? "none" : "block";
+
+}
+
+</script>
+
 
 </body>
 </html>
