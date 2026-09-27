@@ -1,763 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>AI Video Tools - AIHUB | AI Video Generator & Editor</title>
+<title>AI Video Tools - AIHUB</title>
 
-  <meta name="description" content="Discover the best AI video tools for generating videos, editing, avatars, image-to-video and video ideas.">
-  <meta name="keywords" content="AI video generator, AI video tools, text to video, image to video, AI avatar, video editor">
-  <meta name="robots" content="index, follow">
+<meta name="description" content="Create AI video ideas and scripts with AIHUB.">
 
-  <link rel="canonical" href="https://aihubbb.github.io/AIHUB/video.html">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 
-  <meta property="og:title" content="AI Video Tools - AIHUB">
-  <meta property="og:description" content="Explore powerful AI video tools and create better video ideas with AIHUB.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aihubbb.github.io/AIHUB/video.html">
-
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-LG88MPD4NY');
-  </script>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background:
-        radial-gradient(circle at top left, #1c1740, transparent 35%),
-        radial-gradient(circle at top right, #101f45, transparent 35%),
-        #070711;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    /* NAVBAR */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 7%;
-      background: rgba(7, 7, 17, 0.85);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #fff;
-    }
-
-    /* HERO */
-
-    .hero {
-      text-align: center;
-      padding: 90px 20px 60px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 15px;
-      border-radius: 30px;
-      background: rgba(139,92,246,0.12);
-      border: 1px solid rgba(139,92,246,0.3);
-      color: #b79cff;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #fff, #a78bfa, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #aaa;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    /* SEARCH */
-
-    .search-box {
-      max-width: 700px;
-      margin: 20px auto 60px;
-      padding: 0 20px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 17px 20px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: white;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .search-box input:focus {
-      border-color: #8b5cf6;
-      box-shadow: 0 0 20px rgba(139,92,246,0.15);
-    }
-
-    /* CONTAINER */
-
-    .container {
-      width: 86%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: #888;
-    }
-
-    /* TOOLS */
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 80px;
-    }
-
-    .tool-card {
-      padding: 25px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(139,92,246,0.5);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-
-    .icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #8b5cf6, #2563eb);
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .tool-card h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
-    }
-
-    .tool-card p {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: rgba(34,197,94,0.12);
-      color: #6ee7a0;
-      font-size: 11px;
-      margin-right: 5px;
-    }
-
-    .soon {
-      background: rgba(251,191,36,0.12);
-      color: #fbbf24;
-    }
-
-    /* PROMPT GENERATOR */
-
-    .prompt-section {
-      margin-bottom: 80px;
-      padding: 35px;
-      border-radius: 25px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(139,92,246,0.13),
-          rgba(37,99,235,0.08)
-        );
-      border: 1px solid rgba(139,92,246,0.2);
-    }
-
-    .prompt-section h2 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .prompt-section > p {
-      color: #999;
-      margin-bottom: 25px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 150px;
-      resize: vertical;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 18px;
-      color: white;
-      outline: none;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    textarea:focus {
-      border-color: #8b5cf6;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .primary {
-      background: linear-gradient(90deg, #8b5cf6, #2563eb);
-      color: white;
-    }
-
-    .primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .secondary {
-      background: rgba(255,255,255,0.08);
-      color: white;
-    }
-
-    .secondary:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    /* INFO */
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 80px;
-    }
-
-    .info-card {
-      padding: 25px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .info-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .info-card p {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      color: #777;
-      font-size: 13px;
-    }
-
-    footer span {
-      color: #9b7cff;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width: 900px) {
-
-      .tools-grid,
-      .info-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-    }
-
-    @media(max-width: 650px) {
-
-      nav {
-        padding: 15px 5%;
-      }
-
-      nav ul {
-        gap: 10px;
-      }
-
-      nav ul li a {
-        font-size: 12px;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .tools-grid,
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        width: 92%;
-      }
-
-      .prompt-section {
-        padding: 22px;
-      }
-
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<header class="navbar">
 
-  <nav>
-    <div class="logo">AIHUB</div>
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
 
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="writing.html">Writing</a></li>
-      <li><a href="image.html">Images</a></li>
-      <li><a href="video.html" class="active">Video</a></li>
-    </ul>
-  </nav>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a class="active" href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</nav>
 
-  <!-- HERO -->
+</header>
 
-  <section class="hero">
 
-    <div class="badge">🎬 AI Video Tools</div>
+<main class="page">
 
-    <h1>Create Better Videos With AI</h1>
+<div class="page-header">
 
-    <p>
-      Discover AI-powered video tools for video generation,
-      editing, avatars, image-to-video and creative video ideas.
-    </p>
+<p class="small-title">VIDEO</p>
 
-  </section>
+<h1>🎬 AI Video</h1>
 
+<p>
+Generate video concepts and content ideas.
+</p>
 
-  <!-- SEARCH -->
+</div>
 
-  <div class="search-box">
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search video tools..."
-      onkeyup="searchTools()"
-    >
+<div class="workspace">
 
-  </div>
+<h2>Video Idea Generator</h2>
 
+<input
+id="videoTopic"
+placeholder="Video topic e.g. football training"
+>
 
-  <!-- TOOLS -->
+<button
+class="action-btn"
+onclick="generateVideoIdea()"
+>
+Generate Idea
+</button>
 
-  <main class="container">
+<div id="videoOutput" class="output">
+Your video idea will appear here.
+</div>
 
-    <div class="section-title">
-      <h2>AI Video Tools</h2>
-      <p>Explore useful tools for your next video project.</p>
-    </div>
+</div>
 
+</main>
 
-    <div class="tools-grid" id="toolsGrid">
 
+<footer>
 
-      <!-- TOOL 1 -->
+<div class="footer-main">
 
-      <div class="tool-card">
+<div>
+<a href="index.html" class="logo"><span>AI</span>HUB</a>
+<p>Useful AI tools in one place.</p>
+</div>
 
-        <div class="icon">🎥</div>
+<div class="footer-links">
 
-        <h3>AI Video Generator</h3>
+<div>
+<h4>Tools</h4>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</div>
 
-        <p>
-          Generate creative video concepts using artificial intelligence.
-        </p>
+</div>
 
-        <span class="tag soon">SOON</span>
+</div>
 
-      </div>
+<div class="footer-bottom">
+© 2026 AIHUB
+</div>
 
+</footer>
 
-      <!-- TOOL 2 -->
-
-      <div class="tool-card">
-
-        <div class="icon">✍️</div>
-
-        <h3>Text to Video</h3>
-
-        <p>
-          Turn your written idea or script into a video concept.
-        </p>
-
-        <span class="tag soon">SOON</span>
-
-      </div>
-
-
-      <!-- TOOL 3 -->
-
-      <div class="tool-card">
-
-        <div class="icon">✂️</div>
-
-        <h3>AI Video Editor</h3>
-
-        <p>
-          Discover smarter ways to edit, improve and organize your videos.
-        </p>
-
-        <span class="tag">FREE</span>
-
-      </div>
-
-
-      <!-- TOOL 4 -->
-
-      <div class="tool-card">
-
-        <div class="icon">🖼️</div>
-
-        <h3>Image to Video</h3>
-
-        <p>
-          Transform static images into engaging video concepts.
-        </p>
-
-        <span class="tag soon">SOON</span>
-
-      </div>
-
-
-      <!-- TOOL 5 -->
-
-      <div class="tool-card">
-
-        <div class="icon">👤</div>
-
-        <h3>AI Avatar</h3>
-
-        <p>
-          Create ideas for videos featuring AI-generated digital presenters.
-        </p>
-
-        <span class="tag soon">SOON</span>
-
-      </div>
-
-
-      <!-- TOOL 6 -->
-
-      <div class="tool-card">
-
-        <div class="icon">💡</div>
-
-        <h3>Video Ideas</h3>
-
-        <p>
-          Generate creative video ideas for YouTube, TikTok and social media.
-        </p>
-
-        <span class="tag">FREE</span>
-
-      </div>
-
-    </div>
-
-
-    <!-- PROMPT GENERATOR -->
-
-    <section class="prompt-section">
-
-      <h2>🎬 Video Prompt Generator</h2>
-
-      <p>
-        Write your video idea and AIHUB will turn it into a more detailed prompt.
-      </p>
-
-      <textarea
-        id="videoPrompt"
-        placeholder="Example: A football player training at sunset..."
-      ></textarea>
-
-      <div class="buttons">
-
-        <button class="primary" onclick="improvePrompt()">
-          ✨ Improve Prompt
-        </button>
-
-        <button class="secondary" onclick="copyPrompt()">
-          📋 Copy
-        </button>
-
-        <button class="secondary" onclick="clearPrompt()">
-          🗑 Clear
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- INFO -->
-
-    <div class="section-title">
-
-      <h2>Why Use AI Video Tools?</h2>
-
-      <p>
-        AI can help you create ideas faster and improve your creative workflow.
-      </p>
-
-    </div>
-
-
-    <div class="info-grid">
-
-      <div class="info-card">
-
-        <h3>⚡ Save Time</h3>
-
-        <p>
-          Generate ideas and organize your video concepts faster.
-        </p>
-
-      </div>
-
-
-      <div class="info-card">
-
-        <h3>💡 More Ideas</h3>
-
-        <p>
-          Find new concepts for YouTube, TikTok, Instagram and other platforms.
-        </p>
-
-      </div>
-
-
-      <div class="info-card">
-
-        <h3>🚀 Create More</h3>
-
-        <p>
-          Use AI as a creative assistant for your next project.
-        </p>
-
-      </div>
-
-    </div>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    © 2026 <span>AIHUB</span> — AI Tools Hub
-
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    /* SEARCH */
-
-    function searchTools() {
-
-      const input =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-      const cards =
-        document.querySelectorAll(".tool-card");
-
-      cards.forEach(card => {
-
-        const text =
-          card.innerText.toLowerCase();
-
-        if (text.includes(input)) {
-
-          card.style.display = "block";
-
-        } else {
-
-          card.style.display = "none";
-
-        }
-
-      });
-
-    }
-
-
-    /* IMPROVE VIDEO PROMPT */
-
-    function improvePrompt() {
-
-      const textarea =
-        document.getElementById("videoPrompt");
-
-      const prompt =
-        textarea.value.trim();
-
-      if (!prompt) {
-
-        alert("Write a video idea first.");
-
-        return;
-
-      }
-
-      textarea.value =
-        prompt +
-        ", cinematic video, realistic lighting, smooth camera movement, detailed environment, dynamic composition, high quality, professional filmmaking, 4K.";
-
-    }
-
-
-    /* COPY */
-
-    function copyPrompt() {
-
-      const textarea =
-        document.getElementById("videoPrompt");
-
-      if (!textarea.value.trim()) {
-
-        alert("Nothing to copy.");
-
-        return;
-
-      }
-
-      navigator.clipboard.writeText(textarea.value);
-
-      alert("Prompt copied!");
-
-    }
-
-
-    /* CLEAR */
-
-    function clearPrompt() {
-
-      document.getElementById("videoPrompt").value = "";
-
-    }
-
-  </script>
+<script src="script.js"></script>
 
 </body>
 </html>
