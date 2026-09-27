@@ -1,356 +1,239 @@
-/* =========================
-   AIHUB SCRIPT
-========================= */
+function toggleMenu(){
 
+const menu = document.getElementById("navMenu");
 
-/* ELEMENTS */
-
-const searchInput =
-    document.getElementById("searchInput");
-
-const toolCards =
-    document.querySelectorAll(".tool-card");
-
-const filters =
-    document.querySelectorAll(".filter");
-
-const favoritesFilter =
-    document.getElementById("favoritesFilter");
-
-const noResults =
-    document.getElementById("noResults");
-
-
-/* =========================
-   SETTINGS
-========================= */
-
-let activeFilter = "all";
-
-let showFavorites = false;
-
-
-/* =========================
-   FAVORITES STORAGE
-========================= */
-
-let favorites =
-    JSON.parse(
-        localStorage.getItem("aihubFavorites")
-    ) || [];
-
-
-/* =========================
-   UPDATE FAVORITE BUTTONS
-========================= */
-
-function updateFavorites() {
-
-    document
-        .querySelectorAll(".favorite")
-        .forEach(function(button) {
-
-            const toolName =
-                button.getAttribute("data-tool");
-
-
-            if (favorites.includes(toolName)) {
-
-                button.textContent = "♥";
-
-                button.classList.add("active");
-
-            } else {
-
-                button.textContent = "♡";
-
-                button.classList.remove("active");
-
-            }
-
-        });
+if(menu){
+menu.classList.toggle("show");
+}
 
 }
 
 
-/* =========================
-   FILTER TOOLS
-========================= */
+function searchTools(){
 
-function filterTools() {
+const input = document.getElementById("siteSearch");
 
-    const search =
-        searchInput.value
-        .toLowerCase()
-        .trim();
-
-
-    let visibleTools = 0;
-
-
-    toolCards.forEach(function(card) {
-
-        const name =
-            card.getAttribute("data-name")
-            .toLowerCase();
-
-
-        const category =
-            card.getAttribute("data-category");
-
-
-        const price =
-            card.getAttribute("data-price");
-
-
-        /* SEARCH */
-
-        const searchMatch =
-            name.includes(search);
-
-
-        /* CATEGORY */
-
-        let categoryMatch = true;
-
-
-        if (
-            activeFilter !== "all" &&
-            activeFilter !== "free" &&
-            activeFilter !== "paid"
-        ) {
-
-            categoryMatch =
-                category === activeFilter;
-
-        }
-
-
-        /* FREE / PAID */
-
-        let priceMatch = true;
-
-
-        if (activeFilter === "free") {
-
-            priceMatch =
-                price === "free" ||
-                price === "both";
-
-        }
-
-
-        if (activeFilter === "paid") {
-
-            priceMatch =
-                price === "paid" ||
-                price === "both";
-
-        }
-
-
-        /* FAVORITES */
-
-        const favoriteMatch =
-            !showFavorites ||
-            favorites.includes(
-                card.getAttribute("data-name")
-            );
-
-
-        /* FINAL RESULT */
-
-        if (
-            searchMatch &&
-            categoryMatch &&
-            priceMatch &&
-            favoriteMatch
-        ) {
-
-            card.style.display = "";
-
-            visibleTools++;
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-
-    /* NO RESULTS */
-
-    if (visibleTools === 0) {
-
-        noResults.style.display = "block";
-
-    } else {
-
-        noResults.style.display = "none";
-
-    }
-
+if(!input){
+return;
 }
 
+const query = input.value.toLowerCase().trim();
 
-/* =========================
-   SEARCH
-========================= */
+const cards = document.querySelectorAll(".tool-card");
 
-searchInput.addEventListener(
-    "input",
-    function() {
+cards.forEach(card => {
 
-        filterTools();
+const text = (
+card.innerText + " " +
+(card.dataset.search || "")
+).toLowerCase();
 
-    }
-);
-
-
-/* =========================
-   FILTER BUTTONS
-========================= */
-
-filters.forEach(function(button) {
-
-    button.addEventListener(
-        "click",
-        function() {
-
-
-            /* REMOVE ACTIVE */
-
-            filters.forEach(function(btn) {
-
-                btn.classList.remove("active");
-
-            });
-
-
-            /* ADD ACTIVE */
-
-            button.classList.add("active");
-
-
-            /* FAVORITES */
-
-            if (
-                button === favoritesFilter
-            ) {
-
-                showFavorites = true;
-
-                activeFilter = "all";
-
-            }
-
-
-            /* OTHER FILTERS */
-
-            else {
-
-                showFavorites = false;
-
-                activeFilter =
-                    button.getAttribute(
-                        "data-filter"
-                    );
-
-            }
-
-
-            /* APPLY FILTER */
-
-            filterTools();
-
-        }
-    );
+if(text.includes(query)){
+card.style.display = "";
+}else{
+card.style.display = "none";
+}
 
 });
 
-
-/* =========================
-   FAVORITE BUTTONS
-========================= */
-
-document.addEventListener(
-    "click",
-    function(event) {
+}
 
 
-        const button =
-            event.target.closest(".favorite");
+function countWords(){
+
+const input = document.getElementById("wordText");
+const output = document.getElementById("wordOutput");
+
+if(!input || !output){
+return;
+}
+
+const text = input.value.trim();
+
+const words = text ? text.split(/\s+/).length : 0;
+
+const characters = text.length;
+
+output.textContent =
+"Words: " + words +
+"\nCharacters: " + characters;
+
+}
 
 
-        if (!button) {
+function cleanText(){
 
-            return;
+const input = document.getElementById("cleanText");
+const output = document.getElementById("cleanOutput");
 
-        }
+if(!input || !output){
+return;
+}
 
+let text = input.value;
 
-        const toolName =
-            button.getAttribute("data-tool");
+text = text
+.replace(/\s+/g," ")
+.trim();
 
+output.textContent = text || "Nothing to clean.";
 
-        /* REMOVE FAVORITE */
-
-        if (
-            favorites.includes(toolName)
-        ) {
-
-            favorites =
-                favorites.filter(
-                    function(item) {
-
-                        return item !== toolName;
-
-                    }
-                );
-
-        }
+}
 
 
-        /* ADD FAVORITE */
+function generateWritingPrompt(){
 
-        else {
+const output = document.getElementById("writingPrompt");
 
-            favorites.push(toolName);
+if(!output){
+return;
+}
 
-        }
+const prompts = [
 
+"Write a short article about how artificial intelligence is changing everyday life.",
 
-        /* SAVE */
+"Create a social media post promoting a new technology product.",
 
-        localStorage.setItem(
-            "aihubFavorites",
-            JSON.stringify(favorites)
-        );
+"Write a motivational story about someone who never gave up.",
 
+"Create a blog introduction about the future of online business.",
 
-        /* UPDATE */
+"Write an engaging description for a new mobile application."
 
-        updateFavorites();
+];
 
+const random =
+prompts[Math.floor(Math.random()*prompts.length)];
 
-        /* REFRESH FAVORITES FILTER */
+output.textContent = random;
 
-        if (showFavorites) {
-
-            filterTools();
-
-        }
-
-    }
-);
+}
 
 
-/* =========================
-   START WEBSITE
-========================= */
+function generateImagePrompt(){
 
-updateFavorites();
+const subject =
+document.getElementById("imageSubject")?.value;
 
-filterTools();
+const style =
+document.getElementById("imageStyle")?.value;
+
+const lighting =
+document.getElementById("imageLighting")?.value;
+
+const output =
+document.getElementById("imageOutput");
+
+if(!output){
+return;
+}
+
+if(!subject){
+output.textContent = "Please enter a subject first.";
+return;
+}
+
+output.textContent =
+subject +
+", " +
+style +
+" style, " +
+lighting +
+" lighting, highly detailed, cinematic composition, professional quality, sharp details.";
+
+}
+
+
+function generateVideoIdea(){
+
+const topic =
+document.getElementById("videoTopic")?.value;
+
+const output =
+document.getElementById("videoOutput");
+
+if(!output){
+return;
+}
+
+if(!topic){
+output.textContent = "Please enter a topic first.";
+return;
+}
+
+output.textContent =
+"VIDEO TITLE:\n" +
+topic +
+"\n\nHOOK:\n" +
+"Start with a strong visual or question that immediately catches attention." +
+"\n\nVIDEO IDEA:\n" +
+"Create an engaging video about " +
+topic +
+"." +
+"\n\nENDING:\n" +
+"Finish with a simple call to action.";
+
+}
+
+
+function generateBusinessIdea(){
+
+const topic =
+document.getElementById("businessTopic")?.value;
+
+const output =
+document.getElementById("businessOutput");
+
+if(!output){
+return;
+}
+
+const ideas = [
+
+"Create a small online service around " + (topic || "digital products") + ".",
+
+"Build a niche website that helps people solve a specific problem related to " + (topic || "technology") + ".",
+
+"Create social-media content and monetize it through partnerships and digital products.",
+
+"Build a simple online tool targeting a specific audience and add premium features later."
+
+];
+
+output.textContent =
+ideas[Math.floor(Math.random()*ideas.length)];
+
+}
+
+
+function generateMusicIdea(){
+
+const topic =
+document.getElementById("musicTopic")?.value;
+
+const genre =
+document.getElementById("musicGenre")?.value;
+
+const output =
+document.getElementById("musicOutput");
+
+if(!output){
+return;
+}
+
+if(!topic){
+output.textContent = "Please enter a song topic.";
+return;
+}
+
+output.textContent =
+"SONG CONCEPT\n\n" +
+"Topic: " + topic +
+"\nGenre: " + genre +
+"\n\nMOOD:\nEmotional and memorable.\n\n" +
+"MUSIC IDEA:\nCreate a song around " +
+topic +
+" with a strong intro, memorable chorus and dynamic ending.";
+
+}
