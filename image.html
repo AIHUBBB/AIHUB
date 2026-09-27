@@ -1,290 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>AI Image Tools - AIHUB | AI Image Generator</title>
+<title>AI Image Tools - AIHUB</title>
 
-<meta name="description" content="Discover AI image tools for image generation, AI art, photo editing, background removal, upscaling and logo creation.">
-<meta name="keywords" content="AI image generator, AI art, AI photo editor, background remover, AI logo maker, image upscaler">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://aihubbb.github.io/AIHUB/image.html">
+<meta name="description" content="Create better AI image prompts with AIHUB.">
 
-<meta property="og:title" content="AI Image Tools - AIHUB">
-<meta property="og:description" content="Explore AI image generation, editing and creative image tools.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aihubbb.github.io/AIHUB/image.html">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-LG88MPD4NY');
-</script>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{
-background:
-radial-gradient(circle at top left,#1d1742,transparent 35%),
-radial-gradient(circle at top right,#102247,transparent 35%),
-#070711;
-color:#fff;
-min-height:100vh
-}
-nav{
-position:sticky;top:0;z-index:1000;
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 7%;background:rgba(7,7,17,.88);
-backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(255,255,255,.08)
-}
-.logo{
-font-size:26px;font-weight:800;
-background:linear-gradient(90deg,#8b5cf6,#3b82f6);
--webkit-background-clip:text;-webkit-text-fill-color:transparent
-}
-nav ul{display:flex;gap:25px;list-style:none}
-nav a{color:#aaa;text-decoration:none;font-size:14px}
-nav a:hover,nav a.active{color:#fff}
-
-.hero{text-align:center;padding:90px 20px 60px}
-.badge{
-display:inline-block;padding:8px 15px;border-radius:30px;
-background:rgba(139,92,246,.12);
-border:1px solid rgba(139,92,246,.3);
-color:#b9a1ff;font-size:13px;margin-bottom:20px
-}
-.hero h1{
-font-size:55px;margin-bottom:20px;
-background:linear-gradient(90deg,#fff,#a78bfa,#60a5fa);
--webkit-background-clip:text;-webkit-text-fill-color:transparent
-}
-.hero p{max-width:700px;margin:auto;color:#999;font-size:18px;line-height:1.7}
-
-.search{max-width:700px;margin:0 auto 60px;padding:0 20px}
-.search input{
-width:100%;padding:17px 20px;border-radius:14px;
-border:1px solid rgba(255,255,255,.1);
-background:rgba(255,255,255,.05);
-color:#fff;outline:none;font-size:15px
-}
-
-.container{width:86%;max-width:1200px;margin:auto}
-.title{margin-bottom:30px}
-.title h2{font-size:30px;margin-bottom:8px}
-.title p{color:#888}
-
-.grid{
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:20px;margin-bottom:80px
-}
-.card{
-padding:25px;border-radius:20px;
-background:rgba(255,255,255,.045);
-border:1px solid rgba(255,255,255,.08);
-transition:.3s
-}
-.card:hover{
-transform:translateY(-5px);
-border-color:rgba(139,92,246,.5)
-}
-.icon{
-width:52px;height:52px;border-radius:15px;
-display:flex;align-items:center;justify-content:center;
-background:linear-gradient(135deg,#8b5cf6,#2563eb);
-font-size:24px;margin-bottom:18px
-}
-.card h3{margin-bottom:10px}
-.card p{color:#999;font-size:14px;line-height:1.6;margin-bottom:18px}
-.tag{
-display:inline-block;padding:5px 10px;border-radius:20px;
-background:rgba(34,197,94,.12);color:#6ee7a0;font-size:11px
-}
-.soon{background:rgba(251,191,36,.12);color:#fbbf24}
-
-.generator{
-padding:35px;border-radius:25px;
-background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(37,99,235,.08));
-border:1px solid rgba(139,92,246,.2);
-margin-bottom:80px
-}
-.generator h2{margin-bottom:10px}
-.generator p{color:#999;margin-bottom:20px}
-textarea{
-width:100%;min-height:180px;
-background:rgba(0,0,0,.3);
-border:1px solid rgba(255,255,255,.1);
-border-radius:15px;padding:18px;
-color:#fff;outline:none;
-font-size:15px;line-height:1.6
-}
-.buttons{display:flex;gap:10px;margin-top:15px}
-button{
-border:0;cursor:pointer;padding:12px 18px;
-border-radius:12px;font-weight:600
-}
-.primary{background:linear-gradient(90deg,#8b5cf6,#2563eb);color:#fff}
-.secondary{background:rgba(255,255,255,.08);color:#fff}
-
-footer{
-text-align:center;padding:35px 20px;
-border-top:1px solid rgba(255,255,255,.07);
-color:#777;font-size:13px
-}
-footer span{color:#9b7cff}
-
-@media(max-width:900px){
-.grid{grid-template-columns:repeat(2,1fr)}
-.hero h1{font-size:44px}
-}
-@media(max-width:650px){
-nav ul{gap:10px}
-nav a{font-size:11px}
-.grid{grid-template-columns:1fr}
-.container{width:92%}
-.hero h1{font-size:38px}
-}
-</style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">AIHUB</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="writing.html">Writing</a></li>
-<li><a class="active" href="image.html">Images</a></li>
-<li><a href="video.html">Video</a></li>
-</ul>
+<header class="navbar">
+
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="writing.html">Writing</a>
+<a class="active" href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
 </nav>
 
-<section class="hero">
-<div class="badge">🎨 AI Image Tools</div>
-<h1>Create Amazing Images With AI</h1>
-<p>Explore AI image generation, editing, background removal, upscaling and creative tools.</p>
-</section>
+</header>
 
-<div class="search">
-<input id="search" onkeyup="searchTools()" placeholder="🔍 Search image tools...">
-</div>
 
-<main class="container">
+<main class="page">
 
-<div class="title">
-<h2>AI Image Tools</h2>
-<p>Explore useful tools for images and creative projects.</p>
-</div>
+<div class="page-header">
 
-<div class="grid">
+<p class="small-title">IMAGE</p>
 
-<div class="card">
-<div class="icon">🎨</div>
-<h3>AI Image Generator</h3>
-<p>Create creative image concepts from text prompts.</p>
-<span class="tag soon">SOON</span>
-</div>
+<h1>🎨 AI Images</h1>
 
-<div class="card">
-<div class="icon">🖌️</div>
-<h3>AI Art</h3>
-<p>Explore creative AI art styles and ideas.</p>
-<span class="tag soon">SOON</span>
-</div>
-
-<div class="card">
-<div class="icon">📷</div>
-<h3>AI Photo Editor</h3>
-<p>Improve and edit photos using AI-powered tools.</p>
-<span class="tag soon">SOON</span>
-</div>
-
-<div class="card">
-<div class="icon">✂️</div>
-<h3>Background Remover</h3>
-<p>Remove image backgrounds quickly.</p>
-<span class="tag soon">SOON</span>
-</div>
-
-<div class="card">
-<div class="icon">🔎</div>
-<h3>Image Upscaler</h3>
-<p>Improve image resolution and quality.</p>
-<span class="tag soon">SOON</span>
-</div>
-
-<div class="card">
-<div class="icon">✨</div>
-<h3>AI Logo Maker</h3>
-<p>Create ideas for modern logos and brands.</p>
-<span class="tag soon">SOON</span>
-</div>
+<p>
+Build creative prompts for AI image generators.
+</p>
 
 </div>
 
-<section class="generator">
 
-<h2>✨ Image Prompt Generator</h2>
+<div class="workspace">
 
-<p>Write your image idea and create a more detailed prompt.</p>
+<h2>Image Prompt Builder</h2>
 
-<textarea id="prompt" placeholder="Example: A futuristic city at night..."></textarea>
+<input
+id="imageSubject"
+placeholder="Subject e.g. futuristic football stadium"
+>
 
-<div class="buttons">
-<button class="primary" onclick="improvePrompt()">✨ Improve Prompt</button>
-<button class="secondary" onclick="copyPrompt()">📋 Copy</button>
-<button class="secondary" onclick="clearPrompt()">🗑 Clear</button>
+<select id="imageStyle">
+
+<option>Realistic</option>
+<option>Cinematic</option>
+<option>Anime</option>
+<option>3D Render</option>
+<option>Digital Art</option>
+<option>Fantasy</option>
+
+</select>
+
+<input
+id="imageLighting"
+placeholder="Lighting e.g. sunset"
+>
+
+<button
+class="action-btn"
+onclick="generateImagePrompt()"
+>
+Create Prompt
+</button>
+
+<div id="imageOutput" class="output">
+Your image prompt will appear here.
 </div>
 
-</section>
+</div>
 
 </main>
 
+
 <footer>
-© 2026 <span>AIHUB</span> — AI Tools Hub
+
+<div class="footer-main">
+
+<div>
+<a href="index.html" class="logo"><span>AI</span>HUB</a>
+<p>Useful AI tools in one place.</p>
+</div>
+
+<div class="footer-links">
+
+<div>
+<h4>Tools</h4>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 AIHUB
+</div>
+
 </footer>
 
-<script>
-function searchTools(){
-const value=document.getElementById("search").value.toLowerCase();
-document.querySelectorAll(".card").forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
-});
-}
-
-function improvePrompt(){
-const box=document.getElementById("prompt");
-const text=box.value.trim();
-
-if(!text){
-alert("Write an image idea first.");
-return;
-}
-
-box.value=text+", highly detailed, cinematic lighting, realistic details, professional composition, vibrant atmosphere, high quality, 4K";
-}
-
-function copyPrompt(){
-const box=document.getElementById("prompt");
-
-if(!box.value.trim()){
-alert("Nothing to copy.");
-return;
-}
-
-navigator.clipboard.writeText(box.value);
-alert("Prompt copied!");
-}
-
-function clearPrompt(){
-document.getElementById("prompt").value="";
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
