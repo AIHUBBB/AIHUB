@@ -1,1225 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
-  <title>AIHUB - Best AI Tools for Writing, Images & Video</title>
-
-  <meta
-    name="description"
-    content="AIHUB is a free AI tools hub for writing, image generation, video tools, productivity, coding and study tools."
-  >
-
-  <meta
-    name="keywords"
-    content="AI tools, free AI tools, AI writer, AI image generator, AI video generator, AI tools hub, artificial intelligence"
-  >
-
-  <meta name="author" content="AIHUB">
-
-  <meta name="robots" content="index, follow">
-
-  <link
-    rel="canonical"
-    href="https://aihubbb.github.io/AIHUB/"
-  >
-
-
-  <!-- Open Graph -->
-
-  <meta property="og:title" content="AIHUB - AI Tools Hub">
-
-  <meta
-    property="og:description"
-    content="Discover useful AI tools for writing, images, video, coding, productivity and study."
-  >
-
-  <meta
-    property="og:url"
-    content="https://aihubbb.github.io/AIHUB/"
-  >
-
-  <meta property="og:type" content="website">
-
-  <meta property="og:site_name" content="AIHUB">
-
-
-  <!-- Twitter -->
-
-  <meta name="twitter:card" content="summary">
-
-  <meta
-    name="twitter:title"
-    content="AIHUB - AI Tools Hub"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Discover useful AI tools for writing, images, video and more."
-  >
-
-
-  <!-- Favicon -->
-
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="favicon.svg"
-  >
-
-
-  <!-- Google Analytics -->
-
-  <script async
-    src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY">
-  </script>
-
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-LG88MPD4NY');
-
-  </script>
-
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-
-    body {
-
-      background:
-        radial-gradient(
-          circle at top left,
-          #1d1742,
-          transparent 35%
-        ),
-
-        radial-gradient(
-          circle at top right,
-          #102247,
-          transparent 35%
-        ),
-
-        #070711;
-
-      color: white;
-
-      min-height: 100vh;
-
-    }
-
-
-    /* NAVBAR */
-
-    nav {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 1000;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      padding: 18px 7%;
-
-      background: rgba(7,7,17,0.88);
-
-      backdrop-filter: blur(15px);
-
-      border-bottom:
-        1px solid rgba(255,255,255,0.08);
-
-    }
-
-
-    .logo {
-
-      font-size: 26px;
-
-      font-weight: 800;
-
-      background:
-        linear-gradient(
-          90deg,
-          #8b5cf6,
-          #3b82f6
-        );
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-
-    }
-
-
-    nav ul {
-
-      display: flex;
-
-      gap: 25px;
-
-      list-style: none;
-
-    }
-
-
-    nav ul li a {
-
-      color: #aaa;
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      transition: 0.3s;
-
-    }
-
-
-    nav ul li a:hover {
-
-      color: white;
-
-    }
-
-
-    /* HERO */
-
-    .hero {
-
-      text-align: center;
-
-      padding: 100px 20px 70px;
-
-    }
-
-
-    .badge {
-
-      display: inline-block;
-
-      padding: 8px 15px;
-
-      border-radius: 30px;
-
-      background:
-        rgba(139,92,246,0.12);
-
-      border:
-        1px solid rgba(139,92,246,0.3);
-
-      color: #b9a1ff;
-
-      font-size: 13px;
-
-      margin-bottom: 20px;
-
-    }
-
-
-    .hero h1 {
-
-      font-size: 60px;
-
-      line-height: 1.1;
-
-      margin-bottom: 20px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #ffffff,
-          #a78bfa,
-          #60a5fa
-        );
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-
-    }
-
-
-    .hero p {
-
-      max-width: 720px;
-
-      margin: auto;
-
-      color: #999;
-
-      font-size: 18px;
-
-      line-height: 1.7;
-
-    }
-
-
-    .hero-buttons {
-
-      margin-top: 30px;
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .hero-button {
-
-      display: inline-block;
-
-      padding: 14px 22px;
-
-      border-radius: 12px;
-
-      text-decoration: none;
-
-      color: white;
-
-      font-weight: 600;
-
-      background:
-        linear-gradient(
-          90deg,
-          #8b5cf6,
-          #2563eb
-        );
-
-      transition: 0.3s;
-
-    }
-
-
-    .hero-button:hover {
-
-      transform: translateY(-3px);
-
-    }
-
-
-    .hero-button.secondary {
-
-      background:
-        rgba(255,255,255,0.08);
-
-    }
-
-
-    /* SEARCH */
-
-    .search-box {
-
-      max-width: 700px;
-
-      margin: 0 auto 70px;
-
-      padding: 0 20px;
-
-    }
-
-
-    .search-box input {
-
-      width: 100%;
-
-      padding: 17px 20px;
-
-      border-radius: 14px;
-
-      border:
-        1px solid rgba(255,255,255,0.1);
-
-      background:
-        rgba(255,255,255,0.05);
-
-      color: white;
-
-      outline: none;
-
-      font-size: 15px;
-
-    }
-
-
-    .search-box input:focus {
-
-      border-color: #8b5cf6;
-
-      box-shadow:
-        0 0 25px
-        rgba(139,92,246,0.15);
-
-    }
-
-
-    /* CONTAINER */
-
-    .container {
-
-      width: 86%;
-
-      max-width: 1200px;
-
-      margin: auto;
-
-    }
-
-
-    .section-title {
-
-      margin-bottom: 30px;
-
-    }
-
-
-    .section-title h2 {
-
-      font-size: 30px;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    .section-title p {
-
-      color: #888;
-
-    }
-
-
-    /* TOOLS */
-
-    .tools-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
-
-      margin-bottom: 90px;
-
-    }
-
-
-    .tool-card {
-
-      padding: 25px;
-
-      border-radius: 20px;
-
-      background:
-        rgba(255,255,255,0.045);
-
-      border:
-        1px solid rgba(255,255,255,0.08);
-
-      transition: 0.3s;
-
-    }
-
-
-    .tool-card:hover {
-
-      transform: translateY(-6px);
-
-      border-color:
-        rgba(139,92,246,0.5);
-
-      box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.3);
-
-    }
-
-
-    .icon {
-
-      width: 55px;
-
-      height: 55px;
-
-      border-radius: 15px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #8b5cf6,
-          #2563eb
-        );
-
-      font-size: 25px;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .tool-card h3 {
-
-      font-size: 19px;
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .tool-card p {
-
-      color: #999;
-
-      font-size: 14px;
-
-      line-height: 1.6;
-
-      margin-bottom: 20px;
-
-    }
-
-
-    .tool-link {
-
-      display: inline-block;
-
-      color: #a78bfa;
-
-      text-decoration: none;
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-    }
-
-
-    .tool-link:hover {
-
-      color: white;
-
-    }
-
-
-    .tag {
-
-      display: inline-block;
-
-      padding: 5px 10px;
-
-      border-radius: 20px;
-
-      background:
-        rgba(34,197,94,0.12);
-
-      color: #6ee7a0;
-
-      font-size: 11px;
-
-    }
-
-
-    .soon {
-
-      background:
-        rgba(251,191,36,0.12);
-
-      color: #fbbf24;
-
-    }
-
-
-    /* WHY AIHUB */
-
-    .why {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
-
-      margin-bottom: 90px;
-
-    }
-
-
-    .why-card {
-
-      padding: 28px;
-
-      border-radius: 20px;
-
-      background:
-        rgba(255,255,255,0.04);
-
-      border:
-        1px solid rgba(255,255,255,0.07);
-
-    }
-
-
-    .why-card h3 {
-
-      margin-bottom: 10px;
-
-    }
-
-
-    .why-card p {
-
-      color: #999;
-
-      line-height: 1.6;
-
-      font-size: 14px;
-
-    }
-
-
-    /* CTA */
-
-    .cta {
-
-      text-align: center;
-
-      padding: 60px 25px;
-
-      border-radius: 25px;
-
-      margin-bottom: 90px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(139,92,246,0.16),
-          rgba(37,99,235,0.1)
-        );
-
-      border:
-        1px solid
-        rgba(139,92,246,0.2);
-
-    }
-
-
-    .cta h2 {
-
-      font-size: 34px;
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .cta p {
-
-      color: #999;
-
-      margin-bottom: 25px;
-
-    }
-
-
-    /* FOOTER */
-
-    footer {
-
-      text-align: center;
-
-      padding: 35px 20px;
-
-      border-top:
-        1px solid
-        rgba(255,255,255,0.07);
-
-      color: #777;
-
-      font-size: 13px;
-
-    }
-
-
-    footer span {
-
-      color: #9b7cff;
-
-    }
-
-
-    /* MOBILE */
-
-    @media(max-width: 900px) {
-
-      .tools-grid,
-      .why {
-
-        grid-template-columns:
-          repeat(2,1fr);
-
-      }
-
-
-      .hero h1 {
-
-        font-size: 45px;
-
-      }
-
-    }
-
-
-    @media(max-width: 650px) {
-
-      nav {
-
-        padding: 15px 5%;
-
-      }
-
-
-      nav ul {
-
-        gap: 10px;
-
-      }
-
-
-      nav ul li a {
-
-        font-size: 11px;
-
-      }
-
-
-      .hero {
-
-        padding-top: 65px;
-
-      }
-
-
-      .hero h1 {
-
-        font-size: 38px;
-
-      }
-
-
-      .hero p {
-
-        font-size: 15px;
-
-      }
-
-
-      .tools-grid,
-      .why {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .container {
-
-        width: 92%;
-
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AIHUB - AI Tools for Everyone</title>
+
+<meta name="description" content="AIHUB brings useful AI tools for writing, images, video, business and music together in one place.">
+<meta name="keywords" content="AI tools, artificial intelligence, AI writing, AI image, AI video, AI business, AI music">
+
+<link rel="canonical" href="https://aihubbb.github.io/AIHUB/">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:title" content="AIHUB - AI Tools">
+<meta property="og:description" content="Discover useful AI tools in one place.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aihubbb.github.io/AIHUB/">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LG88MPD4NY');
+</script>
 </head>
-
 
 <body>
 
+<header class="navbar">
 
-  <!-- NAVBAR -->
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
 
-  <nav>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <div class="logo">
-      AIHUB
-    </div>
+<nav id="navMenu">
+<a class="active" href="index.html">Home</a>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</nav>
 
+</header>
 
-    <ul>
+<main>
 
-      <li>
-        <a href="index.html">
-          Home
-        </a>
-      </li>
+<section class="hero">
 
-      <li>
-        <a href="writing.html">
-          Writing
-        </a>
-      </li>
+<div class="hero-badge">🚀 Your AI Toolbox</div>
 
-      <li>
-        <a href="image.html">
-          Images
-        </a>
-      </li>
+<h1>
+Everything AI.<br>
+<span>One Powerful Hub.</span>
+</h1>
 
-      <li>
-        <a href="video.html">
-          Video
-        </a>
-      </li>
+<p>
+Discover useful AI tools for writing, images, videos, business,
+music and productivity.
+</p>
 
-    </ul>
+<div class="search-box">
 
-  </nav>
+<input
+id="siteSearch"
+type="text"
+placeholder="Search AI tools..."
+onkeyup="searchTools()"
+>
 
+<button onclick="searchTools()">Search</button>
 
-  <!-- HERO -->
+</div>
 
-  <section class="hero">
+</section>
 
-    <div class="badge">
-      ✨ AI Tools Hub
-    </div>
 
+<section class="section">
 
-    <h1>
-      Discover The Power Of AI
-    </h1>
+<div class="section-heading">
+<p class="small-title">EXPLORE</p>
+<h2>AI Tools</h2>
+<p>Choose a category and start creating.</p>
+</div>
 
 
-    <p>
-      Explore useful AI tools for writing, images,
-      video, productivity, coding and study.
-      Everything you need in one place.
-    </p>
+<div class="tools-grid" id="toolsGrid">
 
+<a href="writing.html" class="tool-card" data-search="writing text article copy">
+<div class="tool-icon purple">✍️</div>
+<h3>AI Writing</h3>
+<p>Write, rewrite, improve and organize your text.</p>
+<span>Explore →</span>
+</a>
 
-    <div class="hero-buttons">
 
-      <a
-        href="#tools"
-        class="hero-button"
-      >
-        Explore AI Tools
-      </a>
+<a href="image.html" class="tool-card" data-search="image photo picture art design">
+<div class="tool-icon blue">🎨</div>
+<h3>AI Images</h3>
+<p>Create image ideas and powerful AI prompts.</p>
+<span>Explore →</span>
+</a>
 
 
-      <a
-        href="writing.html"
-        class="hero-button secondary"
-      >
-        Start Creating
-      </a>
+<a href="video.html" class="tool-card" data-search="video film youtube content">
+<div class="tool-icon pink">🎬</div>
+<h3>AI Video</h3>
+<p>Create video ideas, scripts and concepts.</p>
+<span>Explore →</span>
+</a>
 
-    </div>
 
-  </section>
+<a href="business.html" class="tool-card" data-search="business marketing startup company money">
+<div class="tool-icon green">💼</div>
+<h3>AI Business</h3>
+<p>Business ideas, marketing and productivity tools.</p>
+<span>Explore →</span>
+</a>
 
 
-  <!-- SEARCH -->
+<a href="music.html" class="tool-card" data-search="music song audio beat">
+<div class="tool-icon orange">🎵</div>
+<h3>AI Music</h3>
+<p>Generate song concepts, lyrics ideas and music prompts.</p>
+<span>Explore →</span>
+</a>
 
-  <div class="search-box">
 
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔍 Search AI tools..."
-      onkeyup="searchTools()"
-    >
+<div class="tool-card coming-soon">
 
-  </div>
+<div class="tool-icon cyan">⚡</div>
 
+<h3>More Tools</h3>
 
-  <!-- TOOLS -->
+<p>
+More AI utilities are coming soon.
+</p>
 
-  <main
-    class="container"
-    id="tools"
-  >
+<span>Coming Soon</span>
 
+</div>
 
-    <div class="section-title">
+</div>
 
-      <h2>
-        Explore AI Tools
-      </h2>
+</section>
 
-      <p>
-        Find the right AI tool for your project.
-      </p>
 
-    </div>
+<section class="stats-section">
 
+<div class="stats">
 
-    <div
-      class="tools-grid"
-      id="toolsGrid"
-    >
+<div>
+<strong>5+</strong>
+<span>Categories</span>
+</div>
 
+<div>
+<strong>24/7</strong>
+<span>Available</span>
+</div>
 
-      <!-- WRITING -->
+<div>
+<strong>100%</strong>
+<span>Web Based</span>
+</div>
 
-      <div class="tool-card">
+</div>
 
-        <div class="icon">
-          ✍️
-        </div>
+</section>
 
-        <h3>
-          AI Writing Tools
-        </h3>
 
-        <p>
-          Write articles, emails, social media posts,
-          ideas and more with AI.
-        </p>
+<section class="section">
 
-        <span class="tag">
-          FREE
-        </span>
+<div class="section-heading">
 
-        <br><br>
+<p class="small-title">WHY AIHUB</p>
 
-        <a
-          href="writing.html"
-          class="tool-link"
-        >
-          Explore Writing →
-        </a>
+<h2>Simple. Fast. Useful.</h2>
 
-      </div>
+<p>
+Everything you need to explore AI without jumping between dozens of websites.
+</p>
 
+</div>
 
-      <!-- IMAGES -->
 
-      <div class="tool-card">
+<div class="features-grid">
 
-        <div class="icon">
-          🎨
-        </div>
+<div class="feature-card">
+<div>⚡</div>
+<h3>Fast</h3>
+<p>Simple interfaces designed to help you get started quickly.</p>
+</div>
 
-        <h3>
-          AI Image Tools
-        </h3>
+<div class="feature-card">
+<div>🎯</div>
+<h3>Useful</h3>
+<p>Tools and ideas focused on real everyday tasks.</p>
+</div>
 
-        <p>
-          Discover AI image generators,
-          editors, logo makers and creative tools.
-        </p>
+<div class="feature-card">
+<div>📱</div>
+<h3>Responsive</h3>
+<p>Use AIHUB comfortably on desktop, tablet or phone.</p>
+</div>
 
-        <span class="tag">
-          FREE
-        </span>
+<div class="feature-card">
+<div>🌍</div>
+<h3>One Place</h3>
+<p>Different AI categories organized in one clean website.</p>
+</div>
 
-        <br><br>
+</div>
 
-        <a
-          href="image.html"
-          class="tool-link"
-        >
-          Explore Images →
-        </a>
+</section>
 
-      </div>
 
+<section class="cta">
 
-      <!-- VIDEO -->
+<div>
 
-      <div class="tool-card">
+<p class="small-title">START NOW</p>
 
-        <div class="icon">
-          🎬
-        </div>
+<h2>Explore the world of AI.</h2>
 
-        <h3>
-          AI Video Tools
-        </h3>
+<p>
+Find your next AI tool and start creating.
+</p>
 
-        <p>
-          Explore AI video generators,
-          editors, avatars and image-to-video tools.
-        </p>
+<a href="writing.html" class="primary-btn">
+Explore Tools →
+</a>
 
-        <span class="tag soon">
-          SOON
-        </span>
+</div>
 
-        <br><br>
+</section>
 
-        <a
-          href="video.html"
-          class="tool-link"
-        >
-          Explore Video →
-        </a>
+</main>
 
-      </div>
 
+<footer>
 
-      <!-- PRODUCTIVITY -->
+<div class="footer-main">
 
-      <div class="tool-card">
+<div>
+<a href="index.html" class="logo">
+<span>AI</span>HUB
+</a>
 
-        <div class="icon">
-          ⚡
-        </div>
+<p>
+Useful AI tools in one place.
+</p>
+</div>
 
-        <h3>
-          Productivity AI
-        </h3>
 
-        <p>
-          Discover AI tools designed to help
-          you work faster and organize your tasks.
-        </p>
+<div class="footer-links">
 
-        <span class="tag soon">
-          SOON
-        </span>
+<div>
+<h4>Tools</h4>
+<a href="writing.html">Writing</a>
+<a href="image.html">Images</a>
+<a href="video.html">Video</a>
+<a href="business.html">Business</a>
+<a href="music.html">Music</a>
+</div>
 
-      </div>
+<div>
+<h4>AIHUB</h4>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+</div>
 
+</div>
 
-      <!-- CODING -->
+</div>
 
-      <div class="tool-card">
+<div class="footer-bottom">
+© 2026 AIHUB. All rights reserved.
+</div>
 
-        <div class="icon">
-          💻
-        </div>
+</footer>
 
-        <h3>
-          AI Coding Tools
-        </h3>
-
-        <p>
-          Find AI assistants for programming,
-          debugging and development.
-        </p>
-
-        <span class="tag soon">
-          SOON
-        </span>
-
-      </div>
-
-
-      <!-- STUDY -->
-
-      <div class="tool-card">
-
-        <div class="icon">
-          📚
-        </div>
-
-        <h3>
-          AI Study Tools
-        </h3>
-
-        <p>
-          Learn faster with AI tools for
-          studying, research and education.
-        </p>
-
-        <span class="tag soon">
-          SOON
-        </span>
-
-      </div>
-
-
-    </div>
-
-
-    <!-- WHY -->
-
-    <div class="section-title">
-
-      <h2>
-        Why AIHUB?
-      </h2>
-
-      <p>
-        One place to discover useful AI tools.
-      </p>
-
-    </div>
-
-
-    <div class="why">
-
-
-      <div class="why-card">
-
-        <h3>
-          🚀 Discover
-        </h3>
-
-        <p>
-          Find different AI tools without
-          searching through hundreds of websites.
-        </p>
-
-      </div>
-
-
-      <div class="why-card">
-
-        <h3>
-          ⚡ Save Time
-        </h3>
-
-        <p>
-          Quickly find tools for writing,
-          images, videos and productivity.
-        </p>
-
-      </div>
-
-
-      <div class="why-card">
-
-        <h3>
-          💡 Create
-        </h3>
-
-        <p>
-          Use AI to help transform your ideas
-          into useful projects and content.
-        </p>
-
-      </div>
-
-
-    </div>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-      <h2>
-        Start Exploring AI
-      </h2>
-
-      <p>
-        Discover new tools and find the right
-        AI solution for your next project.
-      </p>
-
-      <a
-        href="writing.html"
-        class="hero-button"
-      >
-        Explore AIHUB
-      </a>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    © 2026
-    <span>AIHUB</span>
-    — AI Tools Hub
-
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-
-    function searchTools() {
-
-      const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-
-      const cards =
-        document.querySelectorAll(
-          ".tool-card"
-        );
-
-
-      cards.forEach(card => {
-
-        const text =
-          card.innerText.toLowerCase();
-
-
-        if (
-          text.includes(input)
-        ) {
-
-          card.style.display =
-            "block";
-
-        } else {
-
-          card.style.display =
-            "none";
-
-        }
-
-      });
-
-    }
-
-
-  </script>
-
+<script src="script.js"></script>
 
 </body>
-
 </html>
