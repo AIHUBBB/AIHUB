@@ -1,284 +1,993 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>AI Image Tools - AIHUB</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta name="description" content="Discover AI image tools on AIHUB for image generation, creative ideas, editing and visual content.">
+  <meta name="keywords" content="AI image tools, AI image generator, AI art, image generation, AI photo tools, free AI tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aihubbb.github.io/AIHUB/image.html">
 
-    <title>Best AI Image Generators 2026 | AIHUB</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <meta
-        name="description"
-        content="Discover the best AI image generators and image creation tools in 2026. Explore Canva AI, Midjourney, Adobe Firefly, Leonardo AI, Ideogram and DALL-E on AIHUB."
-    >
+  <meta property="og:title" content="AI Image Tools - AIHUB">
+  <meta property="og:description" content="Explore useful AI image and creative visual tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aihubbb.github.io/AIHUB/image.html">
 
-    <meta
-        name="keywords"
-        content="AI image generators, best AI image generators, AI image tools, image generation AI, Midjourney, Canva AI, Adobe Firefly, Leonardo AI, Ideogram, DALL-E"
-    >
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <meta
-        name="author"
-        content="AIHUB"
-    >
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070b14;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    <link
-        rel="canonical"
-        href="https://aihubbb.github.io/AIHUB/image.html"
-    >
+    body::before {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #6c63ff;
+      filter: blur(180px);
+      opacity: .12;
+      top: -200px;
+      left: -150px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    body::after {
+      content: "";
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: #00d4ff;
+      filter: blur(180px);
+      opacity: .08;
+      bottom: -200px;
+      right: -150px;
+      pointer-events: none;
+      z-index: -1;
+    }
 
+    /* NAVBAR */
+
+    nav {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7,11,20,.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #7c6cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b8c0d4;
+      text-decoration: none;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: linear-gradient(135deg,#7467ff,#4d8dff);
+      color: white !important;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 950px;
+      margin: auto;
+      padding: 90px 25px 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: rgba(124,108,255,.12);
+      border: 1px solid rgba(124,108,255,.25);
+      color: #aaa2ff;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px,7vw,70px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg,#8f83ff,#4fdcff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 25px auto;
+      color: #9ca6bc;
+      font-size: 18px;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      max-width: 650px;
+      margin: 30px auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 18px 22px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #7467ff;
+      box-shadow: 0 0 25px rgba(116,103,255,.18);
+    }
+
+    .search-box input::placeholder {
+      color: #778198;
+    }
+
+    /* MAIN */
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 40px 25px 90px;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-header small {
+      color: #8175ff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    .section-header p {
+      color: #818ba1;
+      margin-top: 8px;
+    }
+
+    /* TOOLS */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      position: relative;
+      padding: 27px;
+      min-height: 250px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+      );
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .3s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,108,255,.5);
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(124,108,255,.12);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .tool-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      color: #8993a9;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tool-link {
+      color: #9388ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .status {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: rgba(70,210,140,.12);
+      color: #5be09b;
+      border: 1px solid rgba(70,210,140,.2);
+    }
+
+    /* IMAGE PROMPT AREA */
+
+    .generator-box {
+      margin-top: 50px;
+      padding: 30px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .generator-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .generator-box p {
+      color: #8993a9;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      resize: vertical;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #0b101c;
+      color: white;
+      outline: none;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    textarea:focus {
+      border-color: #7467ff;
+    }
+
+    .generator-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      background: linear-gradient(135deg,#7467ff,#4d8dff);
+    }
+
+    button.secondary {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    #message {
+      color: #7f89a0;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    /* INFO */
+
+    .info-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      padding: 25px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .info-card div {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .info-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      color: #8993a9;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 35px 25px;
+      color: #737d94;
+    }
+
+    .footer-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #737d94;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+      color: #555e72;
+    }
+
+    #noResults {
+      display: none;
+      text-align: center;
+      color: #8b95aa;
+      padding: 30px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width:850px) {
+
+      .tools-grid,
+      .info-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width:600px) {
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .tools-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 30px;
+      }
+
+      .nav-container {
+        padding: 15px 18px;
+      }
+
+      .generator-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- NAVBAR -->
 
-<nav>
+  <nav>
+    <div class="nav-container">
 
-    <div class="logo">
-        🤖 AIHUB
+      <a href="./" class="logo">
+        AI<span>HUB</span>
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="./">Home</a>
+        </li>
+
+        <li>
+          <a href="writing.html">Writing</a>
+        </li>
+
+        <li>
+          <a href="image.html">Images</a>
+        </li>
+
+        <li>
+          <a href="video.html">Video</a>
+        </li>
+
+        <li>
+          <a href="./" class="nav-button">
+            All Tools
+          </a>
+        </li>
+
+      </ul>
+
     </div>
-
-    <div class="nav-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="index.html#categories">
-            Categories
-        </a>
-
-        <a href="index.html#tools">
-            Tools
-        </a>
-
-    </div>
-
-</nav>
+  </nav>
 
 
-<header>
+  <!-- HERO -->
+
+  <header class="hero">
 
     <div class="badge">
-        🎨 AI IMAGE TOOLS
+      🎨 AI Image Tools
     </div>
 
     <h1>
-        Best AI Image Generators in 2026
+      Create Amazing Visuals
+      <br>
+      <span class="gradient-text">With AI.</span>
     </h1>
 
     <p>
-        Discover powerful AI tools for creating images,
-        artwork, designs, illustrations and creative visuals.
+      Discover useful AI image tools for creating,
+      editing and exploring creative visual content.
     </p>
 
-</header>
+    <div class="search-box">
 
-
-<section>
-
-    <h2>
-        AI Image Generation Tools
-    </h2>
-
-    <p>
-        Explore popular AI image generators that can help
-        you create artwork, realistic images, designs,
-        illustrations and visual content using artificial intelligence.
-    </p>
-
-
-    <div class="tools-grid">
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🎨
-            </div>
-
-            <h3>
-                Canva AI
-            </h3>
-
-            <p>
-                AI-powered design and image creation tools
-                for graphics, presentations and visual content.
-            </p>
-
-            <a
-                href="tool.html?tool=Canva AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🖼️
-            </div>
-
-            <h3>
-                Midjourney
-            </h3>
-
-            <p>
-                AI image generator for creating artistic,
-                creative and detailed images from text prompts.
-            </p>
-
-            <a
-                href="tool.html?tool=Midjourney"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🔥
-            </div>
-
-            <h3>
-                Adobe Firefly
-            </h3>
-
-            <p>
-                Generative AI tools for creating and editing
-                images and creative visual content.
-            </p>
-
-            <a
-                href="tool.html?tool=Adobe Firefly"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🦁
-            </div>
-
-            <h3>
-                Leonardo AI
-            </h3>
-
-            <p>
-                AI platform for generating images, artwork,
-                creative assets and visual designs.
-            </p>
-
-            <a
-                href="tool.html?tool=Leonardo AI"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                ✨
-            </div>
-
-            <h3>
-                Ideogram
-            </h3>
-
-            <p>
-                AI image generation platform for creating
-                creative visuals, designs and images with text.
-            </p>
-
-            <a
-                href="tool.html?tool=Ideogram"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🤖
-            </div>
-
-            <h3>
-                DALL-E
-            </h3>
-
-            <p>
-                AI image generation technology for creating
-                images and visual concepts from text descriptions.
-            </p>
-
-            <a
-                href="tool.html?tool=DALL-E"
-                class="try-button"
-            >
-                View Tool →
-            </a>
-
-        </div>
-
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="🔎 Search image tools..."
+        aria-label="Search image tools"
+      >
 
     </div>
 
-</section>
+  </header>
 
 
-<footer>
+  <!-- MAIN -->
 
-    <h2>
-        🤖 AIHUB
-    </h2>
+  <main>
 
-    <p>
-        Discover the best AI tools in one place.
-    </p>
+    <section class="section">
 
-    <p>
-        © 2026 AIHUB
-    </p>
+      <div class="section-header">
 
-</footer>
+        <small>Images</small>
 
+        <h2>AI Image Tools</h2>
+
+        <p>
+          Explore creative tools for AI-powered image creation and visual content.
+        </p>
+
+      </div>
+
+
+      <div class="tools-grid" id="toolsGrid">
+
+
+        <!-- GENERATOR -->
+
+        <article
+          class="tool-card"
+          data-name="ai image generator image generation text to image art"
+        >
+
+          <span class="status">FREE</span>
+
+          <div class="tool-icon">
+            🖼️
+          </div>
+
+          <h3>AI Image Generator</h3>
+
+          <p>
+            Turn creative ideas and prompts into AI-generated images.
+          </p>
+
+          <a href="#generator" class="tool-link">
+            Try Tool →
+          </a>
+
+        </article>
+
+
+        <!-- AI ART -->
+
+        <article
+          class="tool-card"
+          data-name="ai art digital art creative image"
+        >
+
+          <span class="status">FREE</span>
+
+          <div class="tool-icon">
+            🎨
+          </div>
+
+          <h3>AI Art</h3>
+
+          <p>
+            Explore creative AI art ideas and visual styles.
+          </p>
+
+          <a href="#generator" class="tool-link">
+            Explore →
+          </a>
+
+        </article>
+
+
+        <!-- PHOTO -->
+
+        <article
+          class="tool-card"
+          data-name="ai photo photo editing image editor"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            📸
+          </div>
+
+          <h3>AI Photo Editor</h3>
+
+          <p>
+            Discover AI-powered tools for editing and improving images.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+
+        <!-- BACKGROUND -->
+
+        <article
+          class="tool-card"
+          data-name="background remover remove background image"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            ✂️
+          </div>
+
+          <h3>Background Remover</h3>
+
+          <p>
+            Remove image backgrounds with AI-powered technology.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+
+        <!-- UPSCALER -->
+
+        <article
+          class="tool-card"
+          data-name="image upscaler improve quality resolution"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            🔍
+          </div>
+
+          <h3>Image Upscaler</h3>
+
+          <p>
+            Improve image resolution and quality with AI.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+
+        <!-- LOGO -->
+
+        <article
+          class="tool-card"
+          data-name="logo generator ai logo branding design"
+        >
+
+          <span class="status">SOON</span>
+
+          <div class="tool-icon">
+            💎
+          </div>
+
+          <h3>AI Logo Maker</h3>
+
+          <p>
+            Create logo concepts and branding ideas using AI.
+          </p>
+
+          <a href="#toolsGrid" class="tool-link">
+            Coming Soon →
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <div id="noResults">
+        No image tools found. Try another search.
+      </div>
+
+
+      <!-- PROMPT AREA -->
+
+      <div class="generator-box" id="generator">
+
+        <h2>🪄 Image Prompt Generator</h2>
+
+        <p>
+          Write your idea below and create a ready-to-use prompt for an AI image generator.
+        </p>
+
+        <textarea
+          id="promptInput"
+          placeholder="Example: A futuristic city at night, neon lights, cinematic atmosphere..."
+        ></textarea>
+
+        <div class="generator-actions">
+
+          <button onclick="generatePrompt()">
+            ✨ Improve Prompt
+          </button>
+
+          <button class="secondary" onclick="clearPrompt()">
+            Clear
+          </button>
+
+          <button class="secondary" onclick="copyPrompt()">
+            Copy Prompt
+          </button>
+
+        </div>
+
+        <div id="message"></div>
+
+      </div>
+
+
+      <!-- INFO -->
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <div>💡</div>
+
+          <h3>Creative Ideas</h3>
+
+          <p>
+            Turn simple ideas into detailed visual concepts.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div>⚡</div>
+
+          <h3>Fast Creation</h3>
+
+          <p>
+            AI can help you transform text ideas into visual content.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div>🌐</div>
+
+          <h3>Discover More</h3>
+
+          <p>
+            Find useful AI image tools from one simple hub.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+
+        <div class="footer-logo">
+          AI<span style="color:#7c6cff;">HUB</span>
+        </div>
+
+        <small>
+          Your AI tools discovery hub.
+        </small>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="./">Home</a>
+
+        <a href="writing.html">Writing</a>
+
+        <a href="image.html">Images</a>
+
+        <a href="video.html">Video</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 AIHUB. All rights reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /* SEARCH */
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const toolCards =
+      document.querySelectorAll(".tool-card");
+
+    const noResults =
+      document.getElementById("noResults");
+
+
+    searchInput.addEventListener("input", function () {
+
+      const search =
+        this.value.toLowerCase().trim();
+
+      let visible = 0;
+
+      toolCards.forEach(function(card) {
+
+        const name =
+          card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+          card.style.display = "block";
+          visible++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+      noResults.style.display =
+        visible === 0 ? "block" : "none";
+
+    });
+
+
+    /* IMPROVE PROMPT */
+
+    function generatePrompt() {
+
+      const input =
+        document.getElementById("promptInput");
+
+      const message =
+        document.getElementById("message");
+
+      const text =
+        input.value.trim();
+
+      if (!text) {
+
+        message.textContent =
+          "Write an image idea first.";
+
+        return;
+
+      }
+
+      const improved =
+        text +
+        ", highly detailed, cinematic lighting, professional composition, realistic details, high quality, sharp focus";
+
+      input.value = improved;
+
+      message.textContent =
+        "Prompt improved successfully.";
+
+    }
+
+
+    /* CLEAR */
+
+    function clearPrompt() {
+
+      document.getElementById("promptInput").value = "";
+
+      document.getElementById("message").textContent = "";
+
+    }
+
+
+    /* COPY */
+
+    function copyPrompt() {
+
+      const input =
+        document.getElementById("promptInput");
+
+      const text =
+        input.value;
+
+      const message =
+        document.getElementById("message");
+
+      if (!text) {
+
+        message.textContent =
+          "Nothing to copy.";
+
+        return;
+
+      }
+
+      navigator.clipboard.writeText(text);
+
+      message.textContent =
+        "Prompt copied successfully.";
+
+    }
+
+  </script>
 
 </body>
-
 </html>
