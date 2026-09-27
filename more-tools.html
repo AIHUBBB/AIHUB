@@ -3,855 +3,235 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>More AI Tools - AIHUB</title>
+<title>More Tools ⚡ | AIHUB</title>
 
 <meta name="description"
-      content="Explore powerful AIHUB productivity tools for writing, SEO, social media, CVs, text analysis, colors and more.">
-
-<meta name="keywords"
-      content="AI tools, text tools, SEO tools, CV generator, hashtag generator, AIHUB">
-
-<meta name="author" content="AIHUB">
-
-<link rel="canonical"
-      href="https://aihubbb.github.io/AIHUB/more-tools.html">
+      content="Explore AIHUB's powerful productivity tools for text, SEO, social media, CVs, passwords, JSON, colors and more.">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG88MPD4NY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag("js", new Date());
-    gtag("config", "G-LG88MPD4NY");
-</script>
-
 <style>
-    .pro-tools-header {
-        max-width: 900px;
-        margin: 0 auto 45px;
-        text-align: center;
+    /* ================================
+       AIHUB MORE TOOLS PRO
+       ================================ */
+
+    .more-page {
+        position: relative;
+        overflow: hidden;
+        padding: 75px 0 100px;
     }
 
-    .pro-badge {
-        display: inline-block;
-        padding: 8px 15px;
-        border-radius: 999px;
-        background: rgba(139, 92, 246, 0.14);
-        border: 1px solid rgba(139, 92, 246, 0.35);
-        color: #b99cff;
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 18px;
-    }
-
-    .pro-tools-header h1 {
-        font-size: clamp(36px, 6vw, 64px);
-        margin-bottom: 15px;
-    }
-
-    .pro-tools-header p {
-        color: var(--muted);
-        max-width: 700px;
-        margin: auto;
-        line-height: 1.7;
-    }
-
-    .tools-filter {
-        max-width: 850px;
-        margin: 0 auto 35px;
-    }
-
-    .tools-filter input {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 18px 22px;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--text);
-        outline: none;
-        font-size: 16px;
-    }
-
-    .tools-filter input:focus {
-        border-color: var(--purple);
-        box-shadow: 0 0 0 3px rgba(139, 92, 246, .12);
-    }
-
-    .pro-tools-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .pro-tool {
-        background: linear-gradient(
-            145deg,
-            rgba(17,17,34,.98),
-            rgba(12,12,27,.98)
+    .more-page::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        top: -180px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+            circle,
+            rgba(139,92,246,.18),
+            transparent 68%
         );
+        pointer-events: none;
+    }
 
-        border: 1px solid var(--border);
-        border-radius: 22px;
-        padding: 24px;
+    .more-header {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto 45px;
+    }
+
+    .more-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        background: rgba(139,92,246,.11);
+        border: 1px solid rgba(139,92,246,.3);
+        color: #c4b5fd;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .5px;
+        box-shadow: 0 10px 35px rgba(139,92,246,.1);
+    }
+
+    .more-header h1 {
+        margin-top: 20px;
+        font-size: clamp(42px, 7vw, 72px);
+        line-height: 1;
+        letter-spacing: -4px;
+        font-weight: 900;
+        background: linear-gradient(
+            110deg,
+            #ffffff,
+            #c4b5fd,
+            #60a5fa
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .more-header p {
+        max-width: 680px;
+        margin: 22px auto 0;
+        color: #9b9bb0;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* Search */
+
+    .pro-search {
+        position: relative;
+        z-index: 3;
+        max-width: 760px;
+        margin: 0 auto 42px;
+    }
+
+    .pro-search-box {
+        position: relative;
+    }
+
+    .pro-search-icon {
+        position: absolute;
+        left: 19px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        opacity: .7;
+    }
+
+    .pro-search input {
+        width: 100%;
+        height: 60px;
+        padding: 0 55px 0 52px;
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,.1);
+        background: rgba(15,15,29,.82);
+        color: white;
+        outline: none;
+        font-size: 15px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 60px rgba(0,0,0,.25);
         transition: .25s ease;
     }
 
-    .pro-tool:hover {
-        transform: translateY(-5px);
-        border-color: rgba(139,92,246,.55);
-        box-shadow: 0 15px 45px rgba(0,0,0,.25);
+    .pro-search input::placeholder {
+        color: #77778c;
     }
 
-    .tool-top {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        margin-bottom: 18px;
+    .pro-search input:focus {
+        border-color: rgba(139,92,246,.65);
+        box-shadow:
+            0 0 0 4px rgba(139,92,246,.08),
+            0 25px 70px rgba(0,0,0,.35);
     }
 
-    .tool-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: rgba(139,92,246,.13);
-        font-size: 23px;
-    }
-
-    .tool-top h2 {
-        font-size: 19px;
-        margin: 0;
-    }
-
-    .tool-description {
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.6;
-        min-height: 45px;
-    }
-
-    .pro-tool textarea,
-    .pro-tool input,
-    .pro-tool select {
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: 12px;
-        padding: 13px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(0,0,0,.22);
-        color: var(--text);
-        outline: none;
-        font-family: inherit;
-    }
-
-    .pro-tool textarea {
-        min-height: 115px;
-        resize: vertical;
-    }
-
-    .pro-tool input:focus,
-    .pro-tool textarea:focus,
-    .pro-tool select:focus {
-        border-color: var(--purple);
-    }
-
-    .tool-buttons {
-        display: flex;
-        gap: 9px;
-        flex-wrap: wrap;
-        margin-top: 12px;
-    }
-
-    .tool-btn {
+    .clear-search {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
         border: 0;
+        background: rgba(255,255,255,.06);
+        color: #aaaabd;
         cursor: pointer;
-        padding: 11px 15px;
-        border-radius: 11px;
-        background: linear-gradient(135deg, var(--purple), var(--blue));
-        color: white;
-        font-weight: 700;
     }
 
-    .tool-btn.secondary {
-        background: rgba(255,255,255,.07);
-        border: 1px solid var(--border);
-    }
+    /* Categories */
 
-    .tool-result {
-        margin-top: 14px;
-        padding: 14px;
-        min-height: 24px;
-        border-radius: 12px;
-        background: rgba(255,255,255,.035);
-        border: 1px solid rgba(255,255,255,.06);
-        color: var(--muted);
-        line-height: 1.6;
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-
-    .tool-result:empty {
-        display: none;
-    }
-
-    .tool-status {
-        margin-top: 9px;
-        font-size: 12px;
-        color: #8888a0;
-    }
-
-    .palette-output {
+    .categories {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
-    }
-
-    .palette-color {
-        flex: 1;
-        min-width: 55px;
-        height: 70px;
-        border-radius: 12px;
-        display: flex;
-        align-items: end;
         justify-content: center;
-        padding: 7px;
-        box-sizing: border-box;
-        font-size: 11px;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 35px;
+    }
+
+    .category-btn {
+        border: 1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.035);
+        color: #a5a5b8;
+        padding: 9px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 12px;
         font-weight: 700;
+        transition: .2s ease;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
         color: white;
-        text-shadow: 0 1px 3px black;
+        border-color: rgba(139,92,246,.45);
+        background: rgba(139,92,246,.12);
     }
 
-    .tool-full {
-        grid-column: 1 / -1;
+    /* Grid */
+
+    .pro-tools-grid-new {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 20px;
     }
 
-    @media (max-width: 1000px) {
-        .pro-tools-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    .pro-card {
+        position: relative;
+        overflow: hidden;
+        padding: 24px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,.08);
+        background:
+            linear-gradient(
+                145deg,
+                rgba(19,19,38,.9),
+                rgba(9,9,19,.88)
+            );
+        box-shadow: 0 12px 45px rgba(0,0,0,.18);
+        transition:
+            transform .3s ease,
+            border-color .3s ease,
+            box-shadow .3s ease;
     }
 
-    @media (max-width: 700px) {
-        .pro-tools-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .tool-full {
-            grid-column: auto;
-        }
+    .pro-card::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        right: -80px;
+        top: -80px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(139,92,246,.15),
+            transparent 70%
+        );
+        pointer-events: none;
     }
-</style>
+
+    .pro-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(139,92,246,.48);
+        box-shadow: 0 25px 65px rgba(0,0,0,.32);
+    }
+
+    .card-top {
+        display: flex;
+        a
 ```
-
-</head>
-
-<body>
-
-<header class="navbar">
-    <div class="container nav-inner">
-
-```
-    <a href="index.html" class="logo">
-        <span>AI</span>HUB
-    </a>
-
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="writing.html">Writing</a>
-        <a href="image.html">Images</a>
-        <a href="video.html">Video</a>
-        <a href="business.html">Business</a>
-        <a href="music.html">Music</a>
-        <a href="more-tools.html" class="active">More Tools</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-</div>
-```
-
-</header>
-
-<main>
-
-<section class="page-hero">
-
-```
-<div class="container">
-
-    <div class="pro-tools-header">
-
-        <div class="pro-badge">
-            ⚡ AIHUB PRO TOOLBOX
-        </div>
-
-        <h1>
-            More Powerful Tools
-        </h1>
-
-        <p>
-            A growing collection of productivity tools for writing,
-            SEO, social media, CVs, text analysis, development,
-            design and everyday tasks.
-        </p>
-
-    </div>
-
-
-    <div class="tools-filter">
-
-        <input
-            id="moreToolsSearch"
-            type="search"
-            placeholder="🔎 Search a tool..."
-            oninput="filterMoreTools()"
-        >
-
-    </div>
-
-
-    <div id="proToolsGrid" class="pro-tools-grid">
-
-
-        <!-- 1 SUMMARIZER -->
-
-        <article class="pro-tool" data-search="summarizer summary text ai">
-
-            <div class="tool-top">
-                <div class="tool-icon">📝</div>
-                <h2>Text Summarizer</h2>
-            </div>
-
-            <p class="tool-description">
-                Turn long text into a shorter summary.
-            </p>
-
-            <textarea id="summaryInput"
-                      placeholder="Paste your text here..."></textarea>
-
-            <div class="tool-buttons">
-                <button class="tool-btn" onclick="summarizeText()">
-                    Summarize
-                </button>
-
-                <button class="tool-btn secondary"
-                        onclick="clearTool('summaryInput','summaryResult')">
-                    Clear
-                </button>
-            </div>
-
-            <div id="summaryResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 2 TRANSLATOR -->
-
-        <article class="pro-tool" data-search="translator translate language">
-
-            <div class="tool-top">
-                <div class="tool-icon">🌍</div>
-                <h2>Translator</h2>
-            </div>
-
-            <p class="tool-description">
-                Translation interface ready for API integration.
-            </p>
-
-            <textarea id="translateInput"
-                      placeholder="Enter text..."></textarea>
-
-            <select id="translateLanguage">
-                <option>French</option>
-                <option>English</option>
-                <option>Arabic</option>
-                <option>Spanish</option>
-                <option>German</option>
-                <option>Italian</option>
-            </select>
-
-            <button class="tool-btn"
-                    onclick="translateText()">
-                Translate
-            </button>
-
-            <div id="translateResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 3 GRAMMAR -->
-
-        <article class="pro-tool" data-search="grammar checker spelling correction">
-
-            <div class="tool-top">
-                <div class="tool-icon">✅</div>
-                <h2>Grammar Checker</h2>
-            </div>
-
-            <p class="tool-description">
-                Analyze your text and prepare it for grammar API integration.
-            </p>
-
-            <textarea id="grammarInput"
-                      placeholder="Write your sentence..."></textarea>
-
-            <button class="tool-btn"
-                    onclick="checkGrammar()">
-                Check Text
-            </button>
-
-            <div id="grammarResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 4 IDEA GENERATOR -->
-
-        <article class="pro-tool" data-search="ideas idea generator business content">
-
-            <div class="tool-top">
-                <div class="tool-icon">💡</div>
-                <h2>Idea Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Generate project and content ideas around a topic.
-            </p>
-
-            <input id="ideaTopic"
-                   placeholder="Example: football website">
-
-            <button class="tool-btn"
-                    onclick="generateIdea()">
-                Generate Ideas
-            </button>
-
-            <div id="ideaResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 5 CAPTION -->
-
-        <article class="pro-tool" data-search="caption social media instagram tiktok">
-
-            <div class="tool-top">
-                <div class="tool-icon">📱</div>
-                <h2>Social Caption</h2>
-            </div>
-
-            <p class="tool-description">
-                Create a quick caption for social media content.
-            </p>
-
-            <input id="captionTopic"
-                   placeholder="Example: new football video">
-
-            <button class="tool-btn"
-                    onclick="generateCaption()">
-                Generate Caption
-            </button>
-
-            <div id="captionResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 6 EMAIL -->
-
-        <article class="pro-tool" data-search="email generator message professional">
-
-            <div class="tool-top">
-                <div class="tool-icon">📧</div>
-                <h2>Email Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Create a professional email draft from a topic.
-            </p>
-
-            <input id="emailTopic"
-                   placeholder="Example: job application">
-
-            <button class="tool-btn"
-                    onclick="generateEmail()">
-                Generate Email
-            </button>
-
-            <div id="emailResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 7 CV -->
-
-        <article class="pro-tool" data-search="cv resume curriculum vitae job">
-
-            <div class="tool-top">
-                <div class="tool-icon">📄</div>
-                <h2>CV Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Create a simple professional CV structure.
-            </p>
-
-            <input id="cvName"
-                   placeholder="Your name">
-
-            <input id="cvJob"
-                   placeholder="Target position">
-
-            <button class="tool-btn"
-                    onclick="generateCV()">
-                Generate CV
-            </button>
-
-            <div id="cvResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 8 SEO -->
-
-        <article class="pro-tool" data-search="seo title meta description google">
-
-            <div class="tool-top">
-                <div class="tool-icon">🔎</div>
-                <h2>SEO Title Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Generate title ideas for search-friendly pages.
-            </p>
-
-            <input id="seoTopic"
-                   placeholder="Example: AI tools">
-
-            <button class="tool-btn"
-                    onclick="generateSEO()">
-                Generate SEO
-            </button>
-
-            <div id="seoResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 9 PASSWORD -->
-
-        <article class="pro-tool" data-search="password security generator">
-
-            <div class="tool-top">
-                <div class="tool-icon">🔐</div>
-                <h2>Password Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Generate a random 20-character password locally.
-            </p>
-
-            <select id="passwordLength">
-                <option value="12">12 characters</option>
-                <option value="16">16 characters</option>
-                <option value="20" selected>20 characters</option>
-                <option value="32">32 characters</option>
-            </select>
-
-            <button class="tool-btn"
-                    onclick="generatePassword()">
-                Generate Password
-            </button>
-
-            <button class="tool-btn secondary"
-                    onclick="copyElementText('passwordResult')">
-                Copy
-            </button>
-
-            <div id="passwordResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 10 CALCULATOR -->
-
-        <article class="pro-tool" data-search="calculator math calculate">
-
-            <div class="tool-top">
-                <div class="tool-icon">🧮</div>
-                <h2>Calculator</h2>
-            </div>
-
-            <p class="tool-description">
-                Calculate basic mathematical expressions.
-            </p>
-
-            <input id="calcInput"
-                   placeholder="Example: (25*4)+10">
-
-            <div class="tool-buttons">
-
-                <button class="tool-btn"
-                        onclick="calculate()">
-                    Calculate
-                </button>
-
-                <button class="tool-btn secondary"
-                        onclick="clearTool('calcInput','calcResult')">
-                    Clear
-                </button>
-
-            </div>
-
-            <div id="calcResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 11 WORD COUNTER -->
-
-        <article class="pro-tool" data-search="word counter character count text">
-
-            <div class="tool-top">
-                <div class="tool-icon">🔢</div>
-                <h2>Text Analyzer</h2>
-            </div>
-
-            <p class="tool-description">
-                Count words, characters, sentences and paragraphs.
-            </p>
-
-            <textarea id="counterInput"
-                      oninput="updateCounter()"
-                      placeholder="Start typing..."></textarea>
-
-            <div id="counterResult" class="tool-result">
-                Words: <strong>0</strong>
-            </div>
-
-        </article>
-
-
-        <!-- 12 COLOR -->
-
-        <article class="pro-tool" data-search="color palette design colors">
-
-            <div class="tool-top">
-                <div class="tool-icon">🎨</div>
-                <h2>Color Palette</h2>
-            </div>
-
-            <p class="tool-description">
-                Generate a random color palette for your next design.
-            </p>
-
-            <button class="tool-btn"
-                    onclick="generatePalette()">
-                Generate Palette
-            </button>
-
-            <div id="paletteResult"
-                 class="palette-output"></div>
-
-        </article>
-
-
-        <!-- 13 HASHTAG -->
-
-        <article class="pro-tool" data-search="hashtags hashtag social instagram tiktok">
-
-            <div class="tool-top">
-                <div class="tool-icon">#️⃣</div>
-                <h2>Hashtag Generator</h2>
-            </div>
-
-            <p class="tool-description">
-                Generate useful hashtags around a topic.
-            </p>
-
-            <input id="hashtagTopic"
-                   placeholder="Example: football">
-
-            <button class="tool-btn"
-                    onclick="generateHashtags()">
-                Generate Hashtags
-            </button>
-
-            <div id="hashtagResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 14 CASE -->
-
-        <article class="pro-tool" data-search="case converter uppercase lowercase text">
-
-            <div class="tool-top">
-                <div class="tool-icon">🔤</div>
-                <h2>Case Converter</h2>
-            </div>
-
-            <p class="tool-description">
-                Convert text to uppercase, lowercase or title case.
-            </p>
-
-            <textarea id="caseInput"
-                      placeholder="Write your text..."></textarea>
-
-            <div class="tool-buttons">
-
-                <button class="tool-btn"
-                        onclick="convertCase('upper')">
-                    UPPERCASE
-                </button>
-
-                <button class="tool-btn"
-                        onclick="convertCase('lower')">
-                    lowercase
-                </button>
-
-                <button class="tool-btn"
-                        onclick="convertCase('title')">
-                    Title Case
-                </button>
-
-            </div>
-
-            <div id="caseResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 15 TEXT FORMATTER -->
-
-        <article class="pro-tool" data-search="text formatter clean spaces format">
-
-            <div class="tool-top">
-                <div class="tool-icon">🧹</div>
-                <h2>Text Formatter</h2>
-            </div>
-
-            <p class="tool-description">
-                Clean extra spaces and format your text.
-            </p>
-
-            <textarea id="formatInput"
-                      placeholder="Paste text..."></textarea>
-
-            <button class="tool-btn"
-                    onclick="formatText()">
-                Clean Text
-            </button>
-
-            <button class="tool-btn secondary"
-                    onclick="copyElementText('formatResult')">
-                Copy
-            </button>
-
-            <div id="formatResult" class="tool-result"></div>
-
-        </article>
-
-
-        <!-- 16 JSON -->
-
-        <article class="pro-tool tool-full"
-                 data-search="json formatter developer code json">
-
-            <div class="tool-top">
-                <div class="tool-icon">{ }</div>
-                <h2>JSON Formatter</h2>
-            </div>
-
-            <p class="tool-description">
-                Format JSON and make it easier to read.
-            </p>
-
-            <textarea id="jsonInput"
-                      placeholder='{"name":"AIHUB","tools":16}'></textarea>
-
-            <div class="tool-buttons">
-
-                <button class="tool-btn"
-                        onclick="formatJSON()">
-                    Format JSON
-                </button>
-
-                <button class="tool-btn secondary"
-                        onclick="minifyJSON()">
-                    Minify
-                </button>
-
-            </div>
-
-            <div id="jsonResult" class="tool-result"></div>
-
-        </article>
-
-
-    </div>
-
-</div>
-```
-
-</section>
-
-</main>
-
-<footer class="footer">
-
-```
-<div class="container">
-
-    <div class="footer-inner">
-
-        <div>
-            <strong>AIHUB</strong>
-            <p>
-                Your growing AI and productivity toolbox.
-            </p>
-        </div>
-
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-        </div>
-
-    </div>
-
-    <p class="copyright">
-        © 2026 AIHUB. All rights reserved.
-    </p>
-
-</div>
-```
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
